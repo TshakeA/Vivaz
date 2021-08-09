@@ -13,13 +13,6 @@ WHITEC='\033[01;91m'
 CNIL='\033[0m'
 
 Version=`lsb_release -rs | cut -f1 -d"."`
-result=$(curl -s "https://mero.merobots.tk/merobots/install.json")
-echo $result
-if [ "$result" == '"true"' ];then
-echo -e "${RED}! Error is install Source is Locked
-  تم تعطيل تنصيب السورس يرجى مراسله مبرمج السورس لتفعيله  ${CNIL}";
-  exit ;
-fi
 if [ "$Version" == "18" ];then
 echo -e "${WHITB}\n¦ Installing depedencies for ubuntu 18  ... \n${CNIL}"
 cd /lib/x86_64-linux-gnu/ && sudo ln -s libreadline.so.7.0 libreadline.so.6
