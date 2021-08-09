@@ -15,7 +15,7 @@ CNIL='\033[0m'
 Version=`lsb_release -rs | cut -f1 -d"."`
 result=$(curl -s "https://mero.merobots.tk/merobots/install.json")
 echo $result
-if [ "$result" == '"false"' ];then
+if [ "$result" == '"true"' ];then
 echo -e "${RED}! Error is install Source is Locked
   تم تعطيل تنصيب السورس يرجى مراسله مبرمج السورس لتفعيله  ${CNIL}";
   exit ;
