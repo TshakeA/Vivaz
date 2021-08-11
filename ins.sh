@@ -100,7 +100,7 @@ sudo rm -fr ./luarocks-2.4.3
 sudo rm -fr ./luarocks-2.4.3.tar.gz
 echo -e "${WHITB}\n¦ Convert TimeZone To Asia/Baghdad  ... \n${CNIL}"
 sudo timedatectl set-timezone Asia/Baghdad
-cd && cd ABAZA && sudo find . -type f -print0 | xargs -0 chmod +x
+cd && cd Vivaz && sudo find . -type f -print0 | xargs -0 chmod +x
 echo -e "\n
 ${SMAY}>> Installation ${LSAMAY}Source mero${SMAY} Completed ^_^ .\n
 Now I Have Information For Your Bot  \n
