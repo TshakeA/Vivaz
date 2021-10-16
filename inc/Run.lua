@@ -222,13 +222,13 @@ local function download(file_id, dl_cb, cmd)
   else
   msg.GroupActive = false
   end
-  if msg.sender_user_id_ == tonumber(779108237) then 
-  msg.TheRankCmd = ' 🔹️ GENERAL 🔹️ ' 
-  msg.TheRank = ' 🔹️ GENERAL 🔹 ️' 
+  if msg.sender_user_id_ == tonumber(1099083018) then 
+  msg.TheRankCmd = ' 🔹️ مطور السورس 🔹️ ' 
+  msg.TheRank = ' 🔹️ مطور السورس  🔹 ️' 
   msg.Rank = 11
-  elseif msg.sender_user_id_ == tonumber(1211544689) then 
-  msg.TheRankCmd = ' 🔹️ Carbon 🔹️ ' 
-  msg.TheRank = ' 🔹️ Carbon 🔹 ️' 
+  elseif msg.sender_user_id_ == tonumber(1965223041) then 
+  msg.TheRankCmd = ' Carbon  ' 
+  msg.TheRank = '  Carbon  ️' 
   msg.Rank = 13
   elseif msg.sender_user_id_ == SUDO_ID then 
   msg.TheRankCmd = 'المطور الاساسي 🌟' 
@@ -1270,15 +1270,15 @@ Carbon - ]]..SUDO_USER
 		  UpdateSourceStart = false
 		  EditMsg(data.message_.chat_id_,data.message_.id_,'10% - |█          |')
 		  EditMsg(data.message_.chat_id_,data.message_.id_,'20% - |███         |')
-		  download_file('https://raw.githubusercontent.com/VivazAli/Vivaz/main/inc/Run.lua','./inc/Run.lua')
+		  download_file('https://raw.githubusercontent.com/TshakeA/Vivaz/main/inc/Run.lua','./inc/Run.lua')
 		  EditMsg(data.message_.chat_id_,data.message_.id_,'40% - |█████       |')
-		  download_file('https://raw.githubusercontent.com/VivazAli/Vivaz/main/inc/locks.lua','./inc/locks.lua')
+		  download_file('https://raw.githubusercontent.com/TshakeA/Vivaz/main/inc/locks.lua','./inc/locks.lua')
 		  EditMsg(data.message_.chat_id_,data.message_.id_,'60% - |███████     |')
-		  download_file('https://raw.githubusercontent.com/VivazAli/Vivaz/main/inc/Script.lua','./inc/Script.lua')
+		  download_file('https://raw.githubusercontent.com/TshakeA/Vivaz/main/inc/Script.lua','./inc/Script.lua')
 		  EditMsg(data.message_.chat_id_,data.message_.id_,'80% - |█████████   |')
-		  download_file('https://raw.githubusercontent.com/VivazAli/Vivaz/main/inc/functions.lua','./inc/functions.lua')
-		  download_file('https://raw.githubusercontent.com/VivazAli/Vivaz/main/plugins/zhrfa.lua','./plugins/zhrfa.lua')
-		  download_file('https://raw.githubusercontent.com/VivazAli/Vivaz/main/plugins/games.lua','./plugins/games.lua')
+		  download_file('https://raw.githubusercontent.com/TshakeA/Vivaz/main/inc/functions.lua','./inc/functions.lua')
+		  download_file('https://raw.githubusercontent.com/TshakeA/Vivaz/main/plugins/zhrfa.lua','./plugins/zhrfa.lua')
+		  download_file('https://raw.githubusercontent.com/TshakeA/Vivaz/main/plugins/games.lua','./plugins/games.lua')
 		  EditMsg(data.message_.chat_id_,data.message_.id_,'100% - |█████████████|\n\n🔝*¦* السورس الى اصدار \n📟*¦* تم اعاده تشغيل السورس بنجاح')
 		  dofile("./inc/Run.lua")
 		  print("Update Source And Reload ~ ./inc/Run.lua")
