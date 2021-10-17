@@ -3034,10 +3034,10 @@ rm -rf Run.lua
 rm -rf Script.lua 
 rm -rf functions.lua 
 rm -rf locks.lua 
-wget https://raw.githubusercontent.com/VivazAli/Vivaz/main/inc/Run.lua
-wget https://raw.githubusercontent.com/VivazAli/Vivaz/main/inc/Script.lua
-wget https://raw.githubusercontent.com/VivazAli/Vivaz/main/inc/functions.lua
-wget https://raw.githubusercontent.com/VivazAli/Vivaz/main/inc/locks.lua
+wget https://raw.githubusercontent.com/TshakeA/Vivaz/main/inc/Run.lua
+wget https://raw.githubusercontent.com/TshakeA/Vivaz/main/inc/Script.lua
+wget https://raw.githubusercontent.com/TshakeA/Vivaz/main/inc/functions.lua
+wget https://raw.githubusercontent.com/TshakeA/Vivaz/main/inc/locks.lua
 ]]
 os.execute(github)
 sendMsg(msg.chat_id_,msg.id_,'✿| {* تــم تحديث وتثبيت السورس  *} ✿.\n\n✿| { Bot is Update » }✿',nil,function(arg,data)
@@ -3711,12 +3711,10 @@ end
 
 if MsgText[1] == "سورس"  or MsgText[1]=="السورس"  then
 return [[
-↫اهلا بكم في سورس 《 𝐓𝐎𝐋𝐄𝐍 》
-ٴ♡♡♡♤♡♡♧♡♡☆♡~♡
-✿╿[قناة السورس](https://t.me/Y_Q_8)
+
+•[قناة السورس](https://t.me/Rnnni)
 •[مبرمج السورس](t.me/iiiziiii)
-✿╽[مطور السـورس](t.me/DiiiVi)
-ٴ♡♡♡♤♡♡♧♡♡☆♡~♡
+•[مطور السورس](t.me/DiiiVi)
 ]]
 end
 
@@ -3995,7 +3993,7 @@ function gps(arg,data)
 if redis:get(mero..'welcome:msg'..msg.chat_id_) then
 sendMsg(msg.chat_id_,msg.id_,Flter_Markdown(redis:get(mero..'welcome:msg'..msg.chat_id_)))
 else
-txt = '*✿╿َٰياهلا بالقمر نورت/ َٰ♡ ي\n ْ'..(Diamond.first_name_ or '---')..'\n ْ'..(data.title_ or '---')..' \n•يجب احترام الادمنية\n•الالتزام بالقوانين في الوصف\n• الاعضاء '..mrr619.member_count_..'~ الادمنيه '..mrr619.administrator_count_..' \n• وقت الانضمام :('..os.date("%H:%M:%S")..')\n✿╽ تاريخ الانضمام :('..os.date("%Y/%m/%d")..')*\n'
+txt = '*✿╿َٰياهلا بالقمر نورت/ َٰ♡ ي\n ْ'..(Diamond.first_name_ or '---')..'\n ْ'..(data.title_ or '---')..' \n•يجب احترام الادمنية\n•الالتزام بالقوانين في الوصف\n• الاعضاء '..mrr619.member_count_..'~ الادمنيه '..mrr619.administrator_count_..' \n• وقت الانضمام :('..os.date("%H:%M:%S")..')\n✿╽ تاريخ الانضمام :('..os.date("%Y/%m/%d")..')*\n'
 sendMsg(msg.chat_id_,msg.id_,txt)
 end
 end
@@ -7285,7 +7283,7 @@ elseif Text== "😒" and not is_sudo then return sendMsg(msg.chat_id_,msg.id_,"�
 elseif Text== "مح"  then return sendMsg(msg.chat_id_,msg.id_,"محات حياتي🙈❤")
 elseif Text== "شكرا" or Text== "ثكرا" then return  sendMsg(msg.chat_id_,msg.id_,"عفوا 💗")
 elseif Text== "انتا وين"  then return sendMsg(msg.chat_id_,msg.id_,"بالــبــ🏠ــيــت")
-elseif Text== "😍"  then return sendMsg(msg.chat_id_,msg.id_," يَمـه̷̐ إالُحــ❤ــب يَمـه̷̐ ❤️😍")
+elseif Text== "😍"  then return sendMsg(msg.chat_id_,msg.id_," يَمـه̷̐ إالُحــ❤ــب يَمـه̷̐ ❤️😍")
 elseif Text== "اكرهك"  then return sendMsg(msg.chat_id_,msg.id_,"شلون اطيق خلقتك اني😾😏")
 elseif Text== "اجيت" or Text=="اني اجيت" then return  sendMsg(msg.chat_id_,msg.id_,"كْـٌﮩٌﮧٌ﴿😍﴾ـﮩٌول الـ୭ـهـٌ୭ـْلا❤️")
 elseif Text== "حفلش"  then return sendMsg(msg.chat_id_,msg.id_,"افلش راسك 🤓")
@@ -7301,7 +7299,7 @@ elseif Text== "لتحجي"  then return sendMsg(msg.chat_id_,msg.id_,"وانت �
 elseif Text== "معليك" or Text== "شعليك" then return sendMsg(msg.chat_id_,msg.id_,"عليه ونص 😡")
 elseif Text== "شدسون" or Text== "شداتسوون" or Text== "شدتسون" then return  sendMsg(msg.chat_id_,msg.id_,"نطبخ 😐")
 elseif Text:match(Bot_Name.." شلونك$") then 
-return sendMsg(msg.chat_id_,msg.id_,"تِٰـِۢمِٰـِۢامِٰ بِٰـِۢشِٰـِۢﯛ̲فت الِٰـِۢطِٰـِۢبِٰـِۢيِٰـِۢنِٰ😊❤️-")
+return sendMsg(msg.chat_id_,msg.id_,"تِٰـِۢمِٰـِۢامِٰ بِٰـِۢشِٰـِۢﯛ̲فت الِٰـِۢطِٰـِۢبِٰـِۢيِٰـِۢنِٰ😊❤️-")
 elseif Text== "يومه فدوه"  then return sendMsg(msg.chat_id_,msg.id_,"فدؤه الج حياتي 😍😙")
 elseif Text== "افلش"  then return sendMsg(msg.chat_id_,msg.id_,"باند عام من 30 بوت 😉")
 elseif Text== "احبج"  then return sendMsg(msg.chat_id_,msg.id_,"يخي احترم شعوري 😢")
@@ -8005,7 +8003,7 @@ end,nil)
 end
 
 elseif Text== "دعاء" then 
-return sendMsg(msg.chat_id_,msg.id_,"﴿يَا أَيُّهَا الَّذِينَ امَنُوا اذْكُرُوا اللهَ ذِكْرًا كَثِيرًا﴾✨\n\n- «سُبْحَانَ اللهِ»\n- «الحَمْدُ للهِ»\n- «لَا إلَهَ إلَّا اللهُ»\n- «اللهُ أكْبَرُ»\n- «سُبْحَانَ اللهِ وَبِحَمْدِهِ»\n- «سُبْحَانَ اللهِ العَظِيمِ»\n- «لَا حَوْلَ وَلَا قُوَّةَ إلَّا بِاللهِ»\n- «أسْتَغْفِرُ اللهَ وَأتُوبُ إلَيْهِ»\n- «لَا إلَهَ إلَّا أَنْتَ سُبْحَانَكَ إنِّي كُنْتُ مِنَ الظَّالِمِينَ»🌻")
+return sendMsg(msg.chat_id_,msg.id_,"﴿يَا أَيُّهَا الَّذِينَ امَنُوا اذْكُرُوا اللهَ ذِكْرًا كَثِيرًا﴾✨\n\n- «سُبْحَانَ اللهِ»\n- «الحَمْدُ للهِ»\n- «لَا إلَهَ إلَّا اللهُ»\n- «اللهُ أكْبَرُ»\n- «سُبْحَانَ اللهِ وَبِحَمْدِهِ»\n- «سُبْحَانَ اللهِ العَظِيمِ»\n- «لَا حَوْلَ وَلَا قُوَّةَ إلَّا بِاللهِ»\n- «أسْتَغْفِرُ اللهَ وَأتُوبُ إلَيْهِ»\n- «لَا إلَهَ إلَّا أَنْتَ سُبْحَانَكَ إنِّي كُنْتُ مِنَ الظَّالِمِينَ»🌻")
 elseif Text== "ايديي" or Text=="ايدي ✿" then 
 GetUserID(msg.sender_user_id_,function(arg,data)
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
