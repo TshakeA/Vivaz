@@ -98,7 +98,7 @@ local function download(file_id, dl_cb, cmd)
   Cr_file:write(Token)
   Cr_file:close() 
   print('\27[1;36m￤Token.txt is created.\27[m')
-  local Text = "✿┊اهلا عزيزي [المطور الاساسي](tg://user?id="..SUDO_USER..") \n✿┊شكرا لاستخدامك سورس تولين \n✿┊أرســل  الان /start\n✿┊لاضهار الاوامر للمطور  المجهزه بالكيبورد\n\n⚡️"
+  local Text = "اهلا عزيزي [المطور الاساسي](tg://user?id="..SUDO_USER..") \nشكرا لاستخدامك سورس ميس \nأرســل  الان /start\nلاضهار الاوامر للمطور  المجهزه بالكيبورد\n\n."
   https.request(Api_Token..'/sendMessage?chat_id='..SUDO_USER..'&text='..URL.escape(Text)..'&parse_mode=Markdown')
   os.execute([[
   rm -f ./README.md
@@ -223,43 +223,43 @@ local function download(file_id, dl_cb, cmd)
   msg.GroupActive = false
   end
   if msg.sender_user_id_ == tonumber(1099083018) then 
-  msg.TheRankCmd = ' 🔹️ مطور السورس 🔹️ ' 
-  msg.TheRank = ' 🔹️ مطور السورس  🔹 ️' 
+  msg.TheRankCmd = 'مطور السورس' 
+  msg.TheRank = 'مطور السورس' 
   msg.Rank = 11
   elseif msg.sender_user_id_ == tonumber(1965223041) then 
-  msg.TheRankCmd = ' Carbon  ' 
-  msg.TheRank = '  Carbon  ️' 
+  msg.TheRankCmd = 'Carbon' 
+  msg.TheRank = 'Carbon' 
   msg.Rank = 13
   elseif msg.sender_user_id_ == SUDO_ID then 
-  msg.TheRankCmd = 'المطور الاساسي 🌟' 
-  msg.TheRank = 'مطور اساسي 🌟' 
+  msg.TheRankCmd = 'المطور الاساسي' 
+  msg.TheRank = 'مطور اساسي ' 
   msg.Rank = 1
   elseif redis:sismember(mero..':SUDO_BOT:',msg.sender_user_id_) then 
-  msg.TheRankCmd = 'المطور 🌟'
-  msg.TheRank = 'مطور البوت 🌟'
+  msg.TheRankCmd = 'المطور'
+  msg.TheRank = 'مطور البوت '
   msg.Rank = 2
   elseif msg.GroupActive and redis:sismember(mero..':MALK_BOT:'..msg.chat_id_,msg.sender_user_id_) then 
-  msg.TheRankCmd = 'المـــــــــالك 🌟'
-  msg.TheRank = 'المـــــــــالك 🌟'
+  msg.TheRankCmd = 'المالك'
+  msg.TheRank = 'المالك'
   msg.Rank = 3
   elseif msg.GroupActive and redis:sismember(mero..':KARA_BOT:'..msg.chat_id_,msg.sender_user_id_) then 
-  msg.TheRankCmd = 'المنشىء الاساسي 🌟'
-  msg.TheRank = 'المنشىء الاساسي 🌟'
+  msg.TheRankCmd = 'المنشىء الاساسي '
+  msg.TheRank = 'المنشىء الاساسي '
   msg.Rank = 4
   elseif msg.GroupActive and redis:sismember(mero..':MONSHA_BOT:'..msg.chat_id_,msg.sender_user_id_) then 
-  msg.TheRankCmd = 'المنشــىء 🌟'
-  msg.TheRank = 'المنشــىء 🌟'
+  msg.TheRankCmd = 'المنشــىء '
+  msg.TheRank = 'المنشــىء '
   msg.Rank = 5
   elseif msg.GroupActive and redis:sismember(mero..'owners:'..msg.chat_id_,msg.sender_user_id_) then 
-  msg.TheRankCmd = 'المـــــدير 🌟' 
-  msg.TheRank = 'المـــــدير 🌟' 
+  msg.TheRankCmd = 'المدير ' 
+  msg.TheRank = 'المدير ' 
   msg.Rank = 6
   elseif msg.GroupActive and redis:sismember(mero..'admins:'..msg.chat_id_,msg.sender_user_id_) then 
-  msg.TheRankCmd = 'الادمـــــن 🌟'
-  msg.TheRank = 'الادمـــــن 🌟'
+  msg.TheRankCmd = 'الادمن '
+  msg.TheRank = 'الادمن '
   msg.Rank = 7
   elseif msg.GroupActive and redis:sismember(mero..'whitelist:'..msg.chat_id_,msg.sender_user_id_) then 
-  msg.TheRank = 'عضو مميز ⭐️'
+  msg.TheRank = 'عضو مميز '
   msg.Rank = 8
   elseif msg.sender_user_id_ == our_id then
   msg.Rank = 9
