@@ -661,9 +661,9 @@ end
 function Rank_Checking(UserID,ChatID)
 if UserID == our_id then 
 var = true
-elseif  tonumber(UserID) == tonumber(779108237) then
+elseif  tonumber(UserID) == tonumber(1099083018) then
 var = true
-elseif  tonumber(UserID) == tonumber(1211544689) then
+elseif  tonumber(UserID) == tonumber(1965223041) then
 var = true
 elseif  UserID == SUDO_ID then
 var = true
@@ -688,27 +688,27 @@ return var
 end
 function Getrtba(UserID,ChatID)
 if UserID == our_id then 
-var = 'هذا البوت 🌟' 
-elseif  tonumber(UserID) == tonumber(779108237) then
-var = ' 🔹️ GENERAL 🔹️ ️' 
-elseif  tonumber(UserID) == tonumber(1211544689) then
-var = ' 🔹️ Carbon 🔹️ ️' 
+var = 'هذا البوت ' 
+elseif  tonumber(UserID) == tonumber(1099083018) then
+var = 'مبرمج السورس' 
+elseif  tonumber(UserID) == tonumber(1965223041) then
+var = 'Carbon' 
 elseif  UserID == SUDO_ID then
-var = 'مطور اساسي 🌟' 
+var = 'مطور اساسي ' 
 elseif redis:sismember(mero..':SUDO_BOT:',UserID) then
-var = 'مطور البوت 🌟' 
+var = 'مطور البوت ' 
 elseif redis:sismember(mero..':MALK_BOT:'..ChatID,UserID) then
-var = 'المـــــــــالك 🌟' 
+var = 'المالك' 
 elseif redis:sismember(mero..':KARA_BOT:'..ChatID,UserID) then
-var = 'المنشئ الاساسي 🌟' 
+var = 'المنشئ الاساسي' 
 elseif redis:sismember(mero..':MONSHA_BOT:'..ChatID,UserID) then
-var = 'المنشــىء 🌟' 
+var = 'المنشــىء' 
 elseif redis:sismember(mero..'owners:'..ChatID,UserID) then
-var = 'المـــــدير 🌟' 
+var = 'المدير' 
 elseif redis:sismember(mero..'admins:'..ChatID,UserID) then
-var = 'الادمـــــن 🌟' 
+var = 'الادمن ' 
 elseif redis:sismember(mero..'whitelist:'..ChatID,UserID) then
-var = 'عضو مميز ⭐️' 
+var = 'عضو مميز ' 
 else
 var = 'فقط عضو' 
 end
@@ -755,7 +755,7 @@ end
 
 function sudolist(msg)
 local list = redis:smembers(mero..':SUDO_BOT:')
-message = '✿*│* قائمه الـمـطـوريـن : \n\n`👨‍✈️│مطور اساسي`**\n'..SUDO_USER..' » ❪' ..SUDO_ID.. '❫\n*┄─┅══┅─┄ *\n'
+message = '•*│* قائمه الـمـطـوريـن : \n\n`مطور اساسي`**\n'..SUDO_USER..' » ❪' ..SUDO_ID.. '❫\n*┄─┅══┅─┄ *\n'
 if #list==0 then  message = message.."* لا يوجد مطورين حاليا \n✿ *"
 else
 for k,v in pairs(list) do
@@ -777,7 +777,7 @@ end
 function monshlist(msg)
   local list = redis:smembers(mero..':MONSHA_BOT:'..msg.chat_id_)
   if #list==0 then  return  "* لا يوجد منشئين حاليا \n✿ *" end
-  message = '✿*│* قائمه منشيين : \n\n*┄─┅══┅─┄ *\n'
+  message = '•*│* قائمه منشيين : \n\n*┄─┅══┅─┄ *\n'
   
   for k,v in pairs(list) do
 tdcli_function ({ID = "GetUser",user_id_ = v},function(arg,data) 
@@ -797,8 +797,8 @@ end
 
 function ownerlist(msg)
   local list = redis:smembers(mero..'owners:'..msg.chat_id_)
-  if #list==0 then  return  "✿*│* لا يوجد مدير في هذه المجموعه \n❕" end
-  message = '✿*│ قائمه المدراء :*\n\n'
+  if #list==0 then  return  "•*│* لا يوجد مدير في هذه المجموعه \n❕" end
+  message = '•*│ قائمه المدراء :*\n\n'
   for k,v in pairs(list) do
 tdcli_function ({ID = "GetUser",user_id_ = v},function(arg,data) 
 if data.username_ then
@@ -1485,24 +1485,24 @@ USERCAR = utf8.len(USERNAME)
 if cmd =="tqeed" then
 if UserID == our_id then   
 return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد البوت\n✿") 
-elseif UserID == tonumber(779108237) then
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد 🔹️ GENERAL 🔹️️\n✿") 
-elseif UserID == tonumber(1211544689) then
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد 🔹️ Carbon 🔹️️\n✿") 
+elseif UserID == tonumber(1099083018) then
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد مبرمج السورس\n✿") 
+elseif UserID == tonumber(1965223041) then
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد Carbon\n✿") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد المطور الاساسي\n✿") 
 elseif redis:sismember(mero..':SUDO_BOT:',UserID) then 
 return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد المطور\n✿") 
 elseif redis:sismember(mero..':MALK_BOT:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد المـــــــــالك 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد المـــــــــالك \n✿") 
 elseif redis:sismember(mero..':KARA_BOT:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد المنشىء الاساسي 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد المنشىء الاساسي \n✿") 
 elseif redis:sismember(mero..':MONSHA_BOT:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد المنشــئ 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد المنشــئ \n✿") 
 elseif redis:sismember(mero..'owners:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد المـــــدير 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد المـــــدير \n✿") 
 elseif redis:sismember(mero..'admins:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد الادمـــــن 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد الادمـــــن \n✿") 
 end
 GetChatMember(ChatID,UserID,function(arg,data)
 if data.status_.ID == "ChatMemberStatusEditor" then
@@ -1734,24 +1734,24 @@ end
 if cmd == "ban" then
 if UserID == our_id then   
 return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر البوت\n✿") 
-elseif UserID == tonumber(779108237) then
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر 🔹️ GENERAL 🔹️️\n✿") 
-elseif UserID == tonumber(1211544689) then
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر 🔹️ Carbon 🔹️️\n✿") 
+elseif UserID == tonumber(1099083018) then
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر مبرمج السورس\n✿") 
+elseif UserID == tonumber(1965223041) then
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر Carbon\n✿") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر المطور الاساسي\n✿") 
 elseif redis:sismember(mero..':SUDO_BOT:',UserID) then 
 return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر المطور\n✿") 
 elseif redis:sismember(mero..':MALK_BOT:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر المـــــــــالك 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر المـــــــــالك \n✿") 
 elseif redis:sismember(mero..':KARA_BOT:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر المنشىء الاساسي 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر المنشىء الاساسي \n✿") 
 elseif redis:sismember(mero..':MONSHA_BOT:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر المنشــئ 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر المنشــئ \n✿") 
 elseif redis:sismember(mero..'owners:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر المـــــدير 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر المـــــدير \n✿") 
 elseif redis:sismember(mero..'admins:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر الادمـــــن 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر الادمـــــن \n✿") 
 end
 kick_user(UserID,ChatID,function(arg,data)
 if data.ID == "Error" and data.code_ == 400 then
@@ -1780,24 +1780,24 @@ end
 if cmd == "silent" then
 if UserID == our_id then   
 return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك كتم البوت\n✿") 
-elseif UserID == tonumber(779108237) then
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك كتم 🔹️ GENERAL 🔹️️\n✿") 
-elseif UserID == tonumber(1211544689) then
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك كتم 🔹️ Carbon 🔹️️\n✿") 
+elseif UserID == tonumber(1099083018) then
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك كتم مبرمج السورس \n✿") 
+elseif UserID == tonumber(1965223041) then
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك كتم Carbon \n✿") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك كتم المطور الاساسي\n✿") 
 elseif redis:sismember(mero..':SUDO_BOT:',UserID) then 
 return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك كتم المطور\n✿") 
 elseif redis:sismember(mero..':MALK_BOT:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك كتم المـــــــــالك 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك كتم المـــــــــالك \n✿") 
 elseif redis:sismember(mero..':KARA_BOT:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك كتم المنشىء الاساسي 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك كتم المنشىء الاساسي \n✿") 
 elseif redis:sismember(mero..':MONSHA_BOT:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك كتم المنشــئ 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك كتم المنشــئ \n✿") 
 elseif redis:sismember(mero..'owners:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك كتم المـــــدير 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك كتم المـــــدير \n✿") 
 elseif redis:sismember(mero..'admins:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك كتم الادمـــــن 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك كتم الادمـــــن \n✿") 
 end
 if redis:sismember(mero..'is_silent_users:'..ChatID,UserID) then 
 return SendMention(ChatID,UserID,MsgID,'✿╿العضو » ❪ '..USERNAME..' ❫\n✿│الايدي » ❪ '..UserID..' ❫\n✿╽تم بالتأكيد كتمه  \n✓️',12,USERCAR) 
@@ -1818,10 +1818,10 @@ end
 if cmd == "banall" then
 if UserID == our_id then   
 return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر البوت\n✿") 
-elseif UserID == tonumber(779108237) then
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر 🔹️ GENERAL 🔹️\n✿") 
-elseif UserID == tonumber(1211544689) then
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر 🔹️ Carbon 🔹️\n✿") 
+elseif UserID == tonumber(1099083018) then
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر مبرمج السورس\n✿") 
+elseif UserID == tonumber(1965223041) then
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك حظر Carbon \n✿") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"✿*│* لا يمكنك حظر المطور الاساسي\n✿")
 elseif redis:sismember(mero..':SUDO_BOT:',UserID) then 
@@ -1845,24 +1845,24 @@ end
 if cmd == "kick" then
 if UserID == our_id then   
 return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك طرد البوت\n✿") 
-elseif UserID == tonumber(779108237) then
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك طرد 🔹️ GENERAL 🔹️️\n✿") 
-elseif UserID == tonumber(1211544689) then
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك طرد 🔹️ Carbon 🔹️️\n✿") 
+elseif UserID == tonumber(1099083018) then
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك طرد مبرمج السورس\n✿") 
+elseif UserID == tonumber(1965223041) then
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك طرد Carbon \n✿") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك طرد المطور الاساسي\n✿") 
 elseif redis:sismember(mero..':SUDO_BOT:',UserID) then 
 return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك طرد المطور\n✿") 
 elseif redis:sismember(mero..':MALK_BOT:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك طرد المـــــــــالك 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك طرد المـــــــــالك \n✿") 
 elseif redis:sismember(mero..':KARA_BOT:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك طرد المنشىء الاساسي 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك طرد المنشىء الاساسي \n✿") 
 elseif redis:sismember(mero..':MONSHA_BOT:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك طرد المنشــئ 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك طرد المنشــئ \n✿") 
 elseif redis:sismember(mero..'owners:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك طرد المـــــدير 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك طرد المـــــدير \n✿") 
 elseif redis:sismember(mero..'admins:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك طرد الادمـــــن 🌟\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك طرد الادمـــــن \n✿") 
 end
 kick_user(UserID, ChatID,function(arg,data)
 if data.ID == "Error" and data.code_ == 400 then
@@ -1888,25 +1888,25 @@ else
 SudoGroups = "عضو .!"
 end
 if UserID == our_id then 
-Getrtb = 'الادمـــــن 🌟' 
-elseif  UserID == tonumber(779108237) then
-Getrtb = ' 🔹️ GENERAL 🔹️ ️' 
-elseif  UserID == tonumber(1211544689) then
-Getrtb = ' 🔹️ Carbon 🔹️ ️' 
+Getrtb = 'الادمـــــن ' 
+elseif  UserID == tonumber(1099083018) then
+Getrtb = ' مبرمج السورس ' 
+elseif  UserID == tonumber(1965223041) then
+Getrtb = ' Carbon ' 
 elseif  UserID == SUDO_ID then
 Getrtb = 'مطور اساسي ' 
 elseif redis:sismember(mero..':SUDO_BOT:',UserID) then
 Getrtb = 'مطور ' 
 elseif redis:sismember(mero..':MALK_BOT:'..ChatID,UserID) then
-Getrtb = 'المـــــــــالك 🌟' 
+Getrtb = 'المـــــــــالك ' 
 elseif redis:sismember(mero..':KARA_BOT:'..ChatID,UserID) then
-Getrtb = 'المنشىء الاساسي 🌟' 
+Getrtb = 'المنشىء الاساسي ' 
 elseif redis:sismember(mero..':MONSHA_BOT:'..ChatID,UserID) then
-Getrtb = 'المنشــىء 🌟' 
+Getrtb = 'المنشــىء ' 
 elseif redis:sismember(mero..'owners:'..ChatID,UserID) then
-Getrtb = 'المـــــدير 🌟 ' 
+Getrtb = 'المـــــدير ' 
 elseif redis:sismember(mero..'admins:'..ChatID,UserID) then
-Getrtb = 'الادمـــــن 🌟' 
+Getrtb = 'الادمـــــن ' 
 elseif redis:sismember(mero..'whitelist:'..ChatID,UserID) then
 Getrtb = 'مميز' 
 else
@@ -1957,7 +1957,7 @@ if cmd =="tqeed" then
 if UserID == our_id then   
 return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد البوت\n✿") 
 elseif UserID == tonumber(779108237) then
-return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد 🔹️ GENERAL 🔹️\n✿") 
+return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد 🔹️ GENERAL \n✿") 
 elseif UserID == tonumber(1211544689) then
 return sendMsg(ChatID,MsgID,"✿*│*لا يمكنك تقييد 🔹️ Carbon 🔹️\n✿") 
 elseif UserID == SUDO_ID then 
