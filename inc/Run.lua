@@ -729,13 +729,13 @@ Carbon - ]]..SUDO_USER
 keyboard = {} 
   keyboard.inline_keyboard = {
   {
-  {text = '𝟭', callback_data="/help1@"..data.sender_user_id_},{text = '𝟮', callback_data="/help2@"..data.sender_user_id_},{text = '𝟯', callback_data="/help3@"..data.sender_user_id_},
+  {text = '⓵', callback_data="/help1@"..data.sender_user_id_},{text = '⓶', callback_data="/help2@"..data.sender_user_id_},{text = 'اوامر الحمايه', callback_data="/help3@"..data.sender_user_id_},
   },
   {
-  {text = '𝟰', callback_data="/help4@"..data.sender_user_id_},{text = '𝟱', callback_data="/help5@"..data.sender_user_id_},
+  {text = '⓸', callback_data="/help4@"..data.sender_user_id_},{text = 'اوامر التحشيش', callback_data="/help5@"..data.sender_user_id_},
   },
   {
-  {text = '𝟲', callback_data="/help6@"..data.sender_user_id_},{text = '𝟳', callback_data="/help7@"..data.sender_user_id_},
+  {text = '⓺', callback_data="/help6@"..data.sender_user_id_},{text = 'اوامر الوضع', callback_data="/help7@"..data.sender_user_id_},
   },
   {
 {text = 'الالعاب ', callback_data="/helpgames@"..data.sender_user_id_},
@@ -785,13 +785,13 @@ Carbon - ]]..SUDO_USER
   keyboard.inline_keyboard = {
       
   {
-  {text = '𝟭', callback_data="/help1@"..data.sender_user_id_},{text = '𝟮', callback_data="/help2@"..data.sender_user_id_},{text = '𝟯', callback_data="/help3@"..data.sender_user_id_},
+  {text = '⓵', callback_data="/help1@"..data.sender_user_id_},{text = '⓶', callback_data="/help2@"..data.sender_user_id_},{text = '⓷', callback_data="/help3@"..data.sender_user_id_},
   },
   {
-  {text = '𝟰', callback_data="/help4@"..data.sender_user_id_},{text = '𝟱', callback_data="/help5@"..data.sender_user_id_},
+  {text = '⓸', callback_data="/help4@"..data.sender_user_id_},{text = '⓹', callback_data="/help5@"..data.sender_user_id_},
   },
   {
-  {text = '𝟲', callback_data="/help6@"..data.sender_user_id_},{text = '𝟳', callback_data="/help7@"..data.sender_user_id_},
+  {text = '⓺', callback_data="/help6@"..data.sender_user_id_},{text = '⓻', callback_data="/help7@"..data.sender_user_id_},
   },
 {
 {text = 'الالعاب ', callback_data="/helpgames@"..data.sender_user_id_},
