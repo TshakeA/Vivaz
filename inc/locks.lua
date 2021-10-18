@@ -4,7 +4,7 @@
 
 ---------------Lock pharsi-------------------
 function lock_pharsi(msg)
-    if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط    " end
+    if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط    " end
     GetUserID(msg.sender_user_id_,function(arg,data)
     msg = arg.msg 
     local NameUser   = Hyper_Link_Name(data)
@@ -12,13 +12,13 @@ function lock_pharsi(msg)
     return sendMsg(msg.chat_id_,msg.id_,"تم قفل الفارسيه مسبقأ" ) 
     else
     redis:set(mero.."lock_pharsi"..msg.chat_id_,true)
-    return sendMsg(msg.chat_id_,msg.id_," ✿┃ لقد قام 〆 "..NameUser.." \n بقفل الفارسيه" ) 
+    return sendMsg(msg.chat_id_,msg.id_," •┃ لقد قام 〆 "..NameUser.." \n بقفل الفارسيه" ) 
     end
     end,{msg=msg})
     end
     
     function unlock_pharsi(msg)
-    if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+    if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
     GetUserID(msg.sender_user_id_,function(arg,data)
     msg = arg.msg 
     local NameUser   = Hyper_Link_Name(data)
@@ -26,127 +26,127 @@ function lock_pharsi(msg)
     return sendMsg(msg.chat_id_,msg.id_,"تم فتح الفارسيه بنجاح " ) 
     else 
     redis:del(mero.."lock_pharsi"..msg.chat_id_)
-    return sendMsg(msg.chat_id_,msg.id_," ✿┃ لقد قام 〆 "..NameUser.." \n بفتح الفارسيه بنجاح✅ " ) 
+    return sendMsg(msg.chat_id_,msg.id_," •┃ لقد قام 〆 "..NameUser.." \n بفتح الفارسيه بنجاح✅ " ) 
     end
     end,{msg=msg})
     end
     ---------------Lock mmno-------------------
     function lock_mmno3(msg)
-    if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+    if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
     GetUserID(msg.sender_user_id_,function(arg,data)
     msg = arg.msg 
     local NameUser   = Hyper_Link_Name(data)
     if redis:get(mero.."lock_mmno3"..msg.chat_id_) then
-    return sendMsg(msg.chat_id_,msg.id_,"✿┃ تم بالتأكيد قفل الفشار    \n✿┃بواسطه ⋙「 "..NameUser.." 」 " ) 
+    return sendMsg(msg.chat_id_,msg.id_,"•┃ تم بالتأكيد قفل الفشار    \n•┃من -「 "..NameUser.." 」 " ) 
     else
     redis:set(mero.."lock_mmno3"..msg.chat_id_,true)
-    return sendMsg(msg.chat_id_,msg.id_,"✿┃تم قفل الفشار بنجاح   \n✿┃بواسطه ⋙「 "..NameUser.." 」 " ) 
+    return sendMsg(msg.chat_id_,msg.id_,"•┃تم قفل الفشار بنجاح   \n•┃من -「 "..NameUser.." 」 " ) 
     end
     end,{msg=msg})
     end
     
     function unlock_mmno3(msg)
-    if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+    if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
     GetUserID(msg.sender_user_id_,function(arg,data)
     msg = arg.msg 
     local NameUser   = Hyper_Link_Name(data)
     if not redis:get(mero.."lock_mmno3"..msg.chat_id_) then
-    return sendMsg(msg.chat_id_,msg.id_,"✿┃تم بالتأكيد فتح الفشار    \n✿┃بواسطه ⋙「 "..NameUser.." 」 " ) 
+    return sendMsg(msg.chat_id_,msg.id_,"•┃تم بالتأكيد فتح الفشار    \n•┃من -「 "..NameUser.." 」 " ) 
     else 
     redis:del(mero.."lock_mmno3"..msg.chat_id_)
-    return sendMsg(msg.chat_id_,msg.id_,"✿┃ تم فتح الفشار بنجاح   \n✿┃ بواسطه ⋙「 "..NameUser.." 」 " ) 
+    return sendMsg(msg.chat_id_,msg.id_,"•┃ تم فتح الفشار بنجاح   \n•┃ من -「 "..NameUser.." 」 " ) 
     end
     end,{msg=msg})
     end
     ---------------Lock editmedia-------------------
     function lock_edit_media(msg)
-    if not msg.Creator then return "✿┃ هذا الامر يخص المنشئين  " end
+    if not msg.Creator then return "•┃ هذا الامر يخص المنشئين  " end
     GetUserID(msg.sender_user_id_,function(arg,data)
     msg = arg.msg 
     local NameUser   = Hyper_Link_Name(data)
     if redis:get(mero.."lock_edit_media"..msg.chat_id_) then
-    return sendMsg(msg.chat_id_,msg.id_,"✿ ┃ تم قفل تعديل الميديا سابقا\n\n✿ ┃ بواسطه ⋙ 「 "..NameUser.." 」 " ) 
+    return sendMsg(msg.chat_id_,msg.id_,"• ┃ تم قفل تعديل الميديا سابقا\n\n• ┃ من - 「 "..NameUser.." 」 " ) 
     else
     redis:set(mero.."lock_edit_media"..msg.chat_id_,true)
-    return sendMsg(msg.chat_id_,msg.id_,"✿ ┃ تم قفل تعديل الميديا\n\n✿ ┃ بواسطه ⋙ 「 "..NameUser.." 」 " ) 
+    return sendMsg(msg.chat_id_,msg.id_,"• ┃ تم قفل تعديل الميديا\n\n• ┃ من - 「 "..NameUser.." 」 " ) 
     end
     end,{msg=msg})
     end
     
     function unlock_edit_media(msg)
-    if not msg.Creator then return "✿┃ هذا الامر يخص المنشئين  " end
+    if not msg.Creator then return "•┃ هذا الامر يخص المنشئين  " end
     GetUserID(msg.sender_user_id_,function(arg,data)
     msg = arg.msg 
     local NameUser   = Hyper_Link_Name(data)
     if not redis:get(mero.."lock_edit_media"..msg.chat_id_) then
-    return sendMsg(msg.chat_id_,msg.id_,"✿ ┃ تم فتح تعديل الميديا سابقا\n\n✿ ┃ بواسطه ⋙ 「 "..NameUser.." 」 " ) 
+    return sendMsg(msg.chat_id_,msg.id_,"• ┃ تم فتح تعديل الميديا سابقا\n\n• ┃ من - 「 "..NameUser.." 」 " ) 
     else 
     redis:del(mero.."lock_edit_media"..msg.chat_id_)
-    return sendMsg(msg.chat_id_,msg.id_,"✿ ┃ تم فتح تعديل الميديا\n\n✿ ┃ بواسطه ⋙ 「 "..NameUser.." 」 " ) 
+    return sendMsg(msg.chat_id_,msg.id_,"• ┃ تم فتح تعديل الميديا\n\n• ┃ من - 「 "..NameUser.." 」 " ) 
     end
     end,{msg=msg})
     end
     
 function unlock_waring(msg)
-if not msg.Admin then return "✿*│*هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  \n✿" end
+if not msg.Admin then return "•*│*هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  \n•" end
 if redis:get(mero..'lock_woring'..msg.chat_id_) then 
-return "✿*╿*أهلا عزيزي "..msg.TheRankCmd.." \n✿*╽*التحذير مفعل مسبقاً \n✓" 
+return "•*╿*أهلا عزيزي "..msg.TheRankCmd.." \n•*╽*التحذير مفعل مسبقاً \n✓" 
 else redis:set(mero..'lock_woring'..msg.chat_id_,true)
-return "✿*╿*أهلا عزيزي "..msg.TheRankCmd.."\n✿*╽*تم تفعيل التحذير \n✓" 
+return "•*╿*أهلا عزيزي "..msg.TheRankCmd.."\n•*╽*تم تفعيل التحذير \n✓" 
 end
 end
  
 function lock_waring(msg)
-if not msg.Admin then return "✿*│*هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  \n✿" end
+if not msg.Admin then return "•*│*هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  \n•" end
 if not redis:get(mero..'lock_woring'..msg.chat_id_) then 
-return "✿*╿*أهلا عزيزي "..msg.TheRankCmd.."\n✿*╽*التحذير بالتأكيد معطل\n✓" 
+return "•*╿*أهلا عزيزي "..msg.TheRankCmd.."\n•*╽*التحذير بالتأكيد معطل\n✓" 
 else
 redis:del(mero..'lock_woring'..msg.chat_id_) 
-return "✿*╿*أهلا عزيزي "..msg.TheRankCmd.."\n✿*╽*تم تعطيل التحذير \n✓" 
+return "•*╿*أهلا عزيزي "..msg.TheRankCmd.."\n•*╽*تم تعطيل التحذير \n✓" 
 end 
 end
 
 function lock_ID(msg)
-if not msg.Admin then return "✿*│*هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  \n✿" end
+if not msg.Admin then return "•*│*هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  \n•" end
 if not redis:get(mero..'lock_id'..msg.chat_id_) then 
-return "✿*╿*أهلا عزيزي "..msg.TheRankCmd.."\n✿*╽*الايدي بالتأكيد معطل\n✓" 
+return "•*╿*أهلا عزيزي "..msg.TheRankCmd.."\n•*╽*الايدي بالتأكيد معطل\n✓" 
 else
 redis:del(mero..'lock_id'..msg.chat_id_) 
-return "✿*╿*أهلا عزيزي "..msg.TheRankCmd.."\n✿*╽*تم تعطيل امر الايدي\n✓" 
+return "•*╿*أهلا عزيزي "..msg.TheRankCmd.."\n•*╽*تم تعطيل امر الايدي\n✓" 
 end 
 end
 
 function unlock_ID(msg)
-if not msg.Admin then return "✿*│*هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  \n✿" end
+if not msg.Admin then return "•*│*هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  \n•" end
 if redis:get(mero..'lock_id'..msg.chat_id_) then 
-return "✿*╿*أهلا عزيزي "..msg.TheRankCmd.."\n✿*╽*امر الايدي شغال بالفعل\n✓" 
+return "•*╿*أهلا عزيزي "..msg.TheRankCmd.."\n•*╽*امر الايدي شغال بالفعل\n✓" 
 else 
 redis:set(mero..'lock_id'..msg.chat_id_,true)  
-return "✿*╿*أهلا عزيزي "..msg.TheRankCmd.."\n✿*╽*تم تفعيل امر الايدي \n✓" 
+return "•*╿*أهلا عزيزي "..msg.TheRankCmd.."\n•*╽*تم تفعيل امر الايدي \n✓" 
 end 
 end
 
 function unlock_Welcome(msg)
-if not msg.Admin then return "✿*│*هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  \n✿" end
+if not msg.Admin then return "•*│*هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  \n•" end
 if redis:get(mero..'welcome:get'..msg.chat_id_) then 
-return "✿*╿*أهلا عزيزي "..msg.TheRankCmd.."\n✿*╽*تفعيل الترحيب مفعل مسبقاً\n✓" 
+return "•*╿*أهلا عزيزي "..msg.TheRankCmd.."\n•*╽*تفعيل الترحيب مفعل مسبقاً\n✓" 
 else redis:set(mero..'welcome:get'..msg.chat_id_,true)  
-return "✿*╿*أهلا عزيزي "..msg.TheRankCmd.."\n✿*╽*تم تفعيل الترحيب \n✓" 
+return "•*╿*أهلا عزيزي "..msg.TheRankCmd.."\n•*╽*تم تفعيل الترحيب \n✓" 
 end 
 end
 
 function lock_Welcome(msg)
-if not msg.Admin then return "✿*│*هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  \n✿" end
+if not msg.Admin then return "•*│*هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  \n•" end
 if not redis:get(mero..'welcome:get'..msg.chat_id_) then 
-return "✿*╿*أهلا عزيزي "..msg.TheRankCmd.."\n✿*╽*الترحيب بالتأكيد معطل\n✓" 
+return "•*╿*أهلا عزيزي "..msg.TheRankCmd.."\n•*╽*الترحيب بالتأكيد معطل\n✓" 
 else
 redis:del(mero..'welcome:get'..msg.chat_id_) 
-return "✿*╿*أهلا عزيزي "..msg.TheRankCmd.."\n✿*╽*تم تعطيل الترحيب \n✓" 
+return "•*╿*أهلا عزيزي "..msg.TheRankCmd.."\n•*╽*تم تعطيل الترحيب \n✓" 
 end 
 end
 
 function lock_All(msg)
-if not msg.Director then return "✿*│*هذا الامر يخص {المطور ، المالك ، المنشئ ، المدير} فقط  \n✿" end
+if not msg.Director then return "•*│*هذا الامر يخص {المطور ، المالك ، المنشئ ، المدير} فقط  \n•" end
 redis:mset(
 mero..'lock_username'..msg.chat_id_,true,
 mero..'mute_gif'..msg.chat_id_,true,
@@ -167,11 +167,11 @@ mero..'lock_webpage'..msg.chat_id_,true,
 mero..'mute_video'..msg.chat_id_,true,
 mero..'mute_inline'..msg.chat_id_,true
 )
-return "✿*╿*أهلا عزيزي "..msg.TheRankCmd.."\n✿*╽*تم قفل الكل  \n✓"
+return "•*╿*أهلا عزيزي "..msg.TheRankCmd.."\n•*╽*تم قفل الكل  \n✓"
 end
 
 function Unlock_All(msg)
-if not msg.Director then return "✿*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n✿" end
+if not msg.Director then return "•*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n•" end
 redis:del(
 mero..'lock_username'..msg.chat_id_,
 mero..'mute_gif'..msg.chat_id_,
@@ -197,11 +197,11 @@ mero..':tqeed_fwd:'..msg.chat_id_,
 mero..':tqeed_link:'..msg.chat_id_,
 mero..'mute_inline'..msg.chat_id_
 )
-return "✿*╿*أهلا عزيزي "..msg.TheRankCmd.."\n✿*╽*تم فتح الكل  \n✓"
+return "•*╿*أهلا عزيزي "..msg.TheRankCmd.."\n•*╽*تم فتح الكل  \n✓"
 end
 
 function lock_Media(msg)
-if not msg.Director then return "✿*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n✿" end
+if not msg.Director then return "•*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n•" end
 redis:mset(
 mero..'mute_gif'..msg.chat_id_,true,
 mero..'mute_photo'..msg.chat_id_,true,
@@ -210,11 +210,11 @@ mero..'mute_voice'..msg.chat_id_,true,
 mero..'mute_sticker'..msg.chat_id_,true,
 mero..'mute_video'..msg.chat_id_,true
 )
-return "✿*╿*أهلا عزيزي "..msg.TheRankCmd.."\n✿╽ تم قفل الوسائط  \n✓"
+return "•*╿*أهلا عزيزي "..msg.TheRankCmd.."\n•╽ تم قفل الوسائط  \n✓"
 end
 
 function Unlock_Media(msg)
-if not msg.Director then return "✿*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n✿" end
+if not msg.Director then return "•*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n•" end
 redis:del(
 mero..'mute_gif'..msg.chat_id_,
 mero..'mute_photo'..msg.chat_id_,
@@ -223,794 +223,794 @@ mero..'mute_voice'..msg.chat_id_,
 mero..'mute_sticker'..msg.chat_id_,
 mero..'mute_video'..msg.chat_id_
 )
-return "✿*╿*أهلا عزيزي "..msg.TheRankCmd.."\n✿╽ تم فتح الوسائط  \n✓"
+return "•*╿*أهلا عزيزي "..msg.TheRankCmd.."\n•╽ تم فتح الوسائط  \n✓"
 end
 
 function tqeed_photo(msg)
-if not msg.Director then return "✿*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n✿" end
+if not msg.Director then return "•*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n•" end
 if redis:get(mero..':tqeed_photo:'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التقييد بالصور بالتأكيد تم قفله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التقييد بالصور بالتأكيد تم قفله \n✓'
 else
 redis:del(mero..'mute_photo'..msg.chat_id_)
 redis:set(mero..':tqeed_photo:'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الصور بالتقييد  \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الصور بالتقييد  \n✓'
 end
 end
 
 function fktqeed_photo(msg)
-if not msg.Director then return "✿*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n✿" end
+if not msg.Director then return "•*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n•" end
 if not redis:get(mero..':tqeed_photo:'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التقييد بالصور بالتأكيد تم فتحه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التقييد بالصور بالتأكيد تم فتحه \n✓'
 else 
 redis:del(mero..':tqeed_photo:'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الصور بالتقييد \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الصور بالتقييد \n✓'
 end
 end
 
 ---------------Lock -------------------
 function tqeed_video(msg)
-if not msg.Director then return "✿*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n✿" end
+if not msg.Director then return "•*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n•" end
 if redis:get(mero..':tqeed_video:'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التقييد بالفيديو بالتأكيد تم قفله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التقييد بالفيديو بالتأكيد تم قفله \n✓'
 else
 redis:del(mero..':tqeed_video:'..msg.chat_id_)
 redis:set(mero..':tqeed_video:'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الفيديو بالتقييد  \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الفيديو بالتقييد  \n✓'
 end
 end
 
 function fktqeed_video(msg)
-if not msg.Director then return "✿*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n✿" end
+if not msg.Director then return "•*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n•" end
 if not redis:get(mero..':tqeed_video:'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التقييد بالفيديو بالتأكيد تم فتحه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التقييد بالفيديو بالتأكيد تم فتحه \n✓'
 else 
 redis:del(mero..':tqeed_video:'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الفيديو بالتقييد \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الفيديو بالتقييد \n✓'
 end
 end
 
 ---------------Lock -------------------
 function tqeed_gif(msg)
-if not msg.Director then return "✿*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n✿" end
+if not msg.Director then return "•*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n•" end
 if redis:get(mero..':tqeed_gif:'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التقييد الممتحركه بالتأكيد تم قفله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التقييد الممتحركه بالتأكيد تم قفله \n✓'
 else
 redis:del(mero..'mute_gif'..msg.chat_id_)
 redis:set(mero..':tqeed_gif:'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل المتحركه بالتقييد  \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل المتحركه بالتقييد  \n✓'
 end
 end
 
 function fktqeed_gif(msg)
-if not msg.Director then return "✿*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n✿" end
+if not msg.Director then return "•*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n•" end
 if not redis:get(mero..':tqeed_gif:'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التقييد المتحركه بالتأكيد تم فتحه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التقييد المتحركه بالتأكيد تم فتحه \n✓'
 else 
 redis:del(mero..':tqeed_gif:'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح المتحركه بالتقييد \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح المتحركه بالتقييد \n✓'
 end
 end
 
 ---------------Lock -------------------
 function tqeed_fwd(msg)
-if not msg.Director then return "✿*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n✿" end
+if not msg.Director then return "•*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n•" end
 if redis:get(mero..':tqeed_fwd:'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التقييد بالتوجيه بالتأكيد تم قفله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التقييد بالتوجيه بالتأكيد تم قفله \n✓'
 else
 redis:del(mero..'mute_forward'..msg.chat_id_)
 redis:set(mero..':tqeed_fwd:'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل التوجيه بالتقييد  \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل التوجيه بالتقييد  \n✓'
 end
 end
 
 function fktqeed_fwd(msg)
-if not msg.Director then return "✿*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n✿" end
+if not msg.Director then return "•*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n•" end
 if not redis:get(mero..':tqeed_fwd:'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التقييد التوجيه بالتأكيد تم فتحه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التقييد التوجيه بالتأكيد تم فتحه \n✓'
 else 
 redis:del(mero..':tqeed_fwd:'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح التوجيه بالتقييد \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح التوجيه بالتقييد \n✓'
 end
 end
  
 ---------------Lock -------------------
 function tqeed_link(msg)
-if not msg.Director then return "✿*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n✿" end
+if not msg.Director then return "•*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n•" end
 if redis:get(mero..':tqeed_link:'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التقييد بالروابط بالتأكيد تم قفله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التقييد بالروابط بالتأكيد تم قفله \n✓'
 else
 redis:set(mero..':tqeed_link:'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الروابط بالتقييد  \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الروابط بالتقييد  \n✓'
 end
 end
 
 function fktqeed_link(msg)
-if not msg.Director then return "✿*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n✿" end
+if not msg.Director then return "•*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n•" end
 if not redis:get(mero..':tqeed_link:'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التقييد بالروابط بالتأكيد تم فتحه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التقييد بالروابط بالتأكيد تم فتحه \n✓'
 else 
 redis:del(mero..':tqeed_link:'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الروابط بالتقييد \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الروابط بالتقييد \n✓'
 end
 end
 
 ---------------Lock -------------------
 function tqeed_photo(msg)
-if not msg.Director then return "✿*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n✿" end
+if not msg.Director then return "•*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n•" end
 if redis:get(mero..':tqeed_photo:'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التقييد بالصور بالتأكيد تم قفله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التقييد بالصور بالتأكيد تم قفله \n✓'
 else
 redis:set(mero..':tqeed_photo:'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الصور بالتقييد  \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الصور بالتقييد  \n✓'
 end
 end
 
 function fktqeed_photo(msg)
-if not msg.Director then return "✿*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n✿" end
+if not msg.Director then return "•*│*هذا الامر يخص {المطور,المالك,المنشئ,المدير} فقط  \n•" end
 if not redis:get(mero..':tqeed_photo:'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التقييد بالصور بالتأكيد تم فتحه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التقييد بالصور بالتأكيد تم فتحه \n✓'
 else 
 redis:del(mero..':tqeed_photo:'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الصور بالتقييد \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الصور بالتقييد \n✓'
 end
 end
 ---------------Lock twasel-------------------
 function lock_twasel(msg)
-if not msg.SudoBase then return "✿*│*هذا الامر يخص المطور الاساسي فقط  \n✿" end
+if not msg.SudoBase then return "•*│*هذا الامر يخص المطور الاساسي فقط  \n•" end
 if redis:get(mero..'lock_twasel') then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التواصل بالتاكيد تم تعطيله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التواصل بالتاكيد تم تعطيله \n✓'
 else
 redis:set(mero..'lock_twasel',true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم تعطيل التواصل  \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم تعطيل التواصل  \n✓'
 end
 end
 
 function unlock_twasel(msg)
-if not msg.SudoBase then return "✿*│*هذا الامر يخص المطور الاساسي فقط  \n✿" end
+if not msg.SudoBase then return "•*│*هذا الامر يخص المطور الاساسي فقط  \n•" end
 if not redis:get(mero..'lock_twasel') then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التواصل بالتاكيد تم تفعيله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التواصل بالتاكيد تم تفعيله \n✓'
 else 
 redis:del(mero..'lock_twasel')
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم تفعيل التواصل \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم تفعيل التواصل \n✓'
 end
 end
 
 ---------------Lock bro-------------------
 function lock_brod(msg)
-if not msg.SudoBase then return "✿*│*هذا الامر يخص المطور فقط  ✿" end
+if not msg.SudoBase then return "•*│*هذا الامر يخص المطور فقط  •" end
 if not redis:get(mero..'lock_brod') then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*اذاعه المطورين بالتاكيد تم تعطيله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*اذاعه المطورين بالتاكيد تم تعطيله \n✓'
 else
 redis:del(mero..'lock_brod')
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم تعطيل اذاعه المطورين  \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم تعطيل اذاعه المطورين  \n✓'
 end
 end
 function unlock_brod(msg)
-if not msg.SudoBase then return "✿*│*هذا الامر يخص المطور فقط  ✿" end
+if not msg.SudoBase then return "•*│*هذا الامر يخص المطور فقط  •" end
 if redis:get(mero..'lock_brod') then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*اذاعه المطورين بالتاكيد تم تفعيله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*اذاعه المطورين بالتاكيد تم تفعيله \n✓'
 else 
 redis:set(mero..'lock_brod',true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم تفعيل اذاعه المطورين  \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم تفعيل اذاعه المطورين  \n✓'
 end
 end
 
 ---------------Lock replay-------------------
 function lock_replay(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'replay'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الردود بالتاكيد تم تعطيله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الردود بالتاكيد تم تعطيله \n✓'
 else
 redis:del(mero..'replay'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم تعطيل الردود  \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم تعطيل الردود  \n✓'
 end
 end
 
 function unlock_replay(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'replay'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الردود بالتاكيد تم تفعيله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الردود بالتاكيد تم تفعيله \n✓'
 else 
 redis:set(mero..'replay'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم تفعيل الردود  \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم تفعيل الردود  \n✓'
 end
 end
 function lock_replayall(msg)
-if not msg.Director then return "✿│هذا الامر يخص {,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Director then return "•│هذا الامر يخص {,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'replayallbot'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الردود العامه بالتاكيد تم تعطيله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الردود العامه بالتاكيد تم تعطيله \n✓'
 else
 redis:del(mero..'replayallbot'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم تعطيل الردود العام  \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم تعطيل الردود العام  \n✓'
 end
 end
 
 function unlock_replayall(msg)
-if not msg.Director then return "✿│هذا الامر يخص {,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Director then return "•│هذا الامر يخص {,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'replayallbot'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*ردود العام بالتاكيد تم تفعيله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*ردود العام بالتاكيد تم تفعيله \n✓'
 else 
 redis:set(mero..'replayallbot'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم تفعيل الردود العامه  \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم تفعيل الردود العامه  \n✓'
 end
 end
 
 ---------------Lock bot service-------------------
 function lock_service(msg)
-if not msg.SudoBase then return "✿*│*هذا الامر يخص المطور الاساسي فقط  \n✿" end
+if not msg.SudoBase then return "•*│*هذا الامر يخص المطور الاساسي فقط  \n•" end
 if not redis:get(mero..'lock_service') then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم بالتاكيد تعطيل نظام البوت خدمي \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم بالتاكيد تعطيل نظام البوت خدمي \n✓'
 else
 redis:del(mero..'lock_service')
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم  تعطيل نظام البوت خدمي \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم  تعطيل نظام البوت خدمي \n✓'
 end
 end
 
 function unlock_service(msg)
-if not msg.SudoBase then return "✿*│*هذا الامر يخص المطور الاساسي فقط  \n✿" end
+if not msg.SudoBase then return "•*│*هذا الامر يخص المطور الاساسي فقط  \n•" end
 if redis:get(mero..'lock_service') then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم بالتأكيد تفعيل نظام البوت خدمي \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم بالتأكيد تفعيل نظام البوت خدمي \n✓'
 else 
 redis:set(mero..'lock_service',true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم تفعيل نظام البوت خدمي \n✓\n✿¦ اصبح البوت الان بامكان اي شخص\n🔚¦ ان يستخدم البوت للتفعيل'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم تفعيل نظام البوت خدمي \n✓\n•¦ اصبح البوت الان بامكان اي شخص\n🔚¦ ان يستخدم البوت للتفعيل'
 end
 end
 
 ---------------Lock Link-------------------
 function lock_link(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'lock_link'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الروابط بالتأكيد تم قفلها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الروابط بالتأكيد تم قفلها \n✓'
 else
 redis:set(mero..'lock_link'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الروابط \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الروابط \n✓'
 end
 end
 
 function unlock_link(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'lock_link'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الروابط بالتأكيد تم فتحها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الروابط بالتأكيد تم فتحها \n✓'
 else 
 redis:del(mero..'lock_link'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الروابط \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الروابط \n✓'
 end
 end
 
 ---------------Lock Tag-------------------
 function lock_tag(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'lock_tag'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التاك (#) بالتأكيد تم قفله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التاك (#) بالتأكيد تم قفله \n✓'
 else
 redis:set(mero..'lock_tag'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل التاك (#) \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل التاك (#) \n✓'
 end
 end
 
 function unlock_tag(msg)
 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'lock_tag'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التاك(#) بالتأكيد تم فتحه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التاك(#) بالتأكيد تم فتحه \n✓'
 else 
 redis:del(mero..'lock_tag'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح التاك (#) \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح التاك (#) \n✓'
 end
 end
 ---------------Lock UserName-------------------
 function lock_username(msg) 
 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 
 if redis:get(mero..'lock_username'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*المعرفات @ بالتأكيد تم قفله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*المعرفات @ بالتأكيد تم قفله \n✓'
 else
 redis:set(mero..'lock_username'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل المعرفات @ \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل المعرفات @ \n✓'
 end
 end
 
 function unlock_username(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'lock_username'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*المـعرفات بالتاگيد تم فتحها @ \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*المـعرفات بالتاگيد تم فتحها @ \n✓'
 else 
 redis:del(mero..'lock_username'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح المـعرفات @ \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح المـعرفات @ \n✓'
 end
 end
 
 ---------------Lock Edit-------------------
 function lock_edit(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'lock_edit'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التعديل بالتأكيد تم قفله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التعديل بالتأكيد تم قفله \n✓'
 else
 redis:set(mero..'lock_edit'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل التعديل \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل التعديل \n✓'
 end
 end
 
 function unlock_edit(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'lock_edit'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التعديل بالتأكيد تم فتحه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التعديل بالتأكيد تم فتحه \n✓'
 else 
 redis:del(mero..'lock_edit'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح التعديل \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح التعديل \n✓'
 end
 end
 
 ---------------Lock spam-------------------
 function lock_spam(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if   redis:get(mero..'lock_spam'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الكلايش بالتأكيد تم قفلها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الكلايش بالتأكيد تم قفلها \n✓'
 else
 redis:set(mero..'lock_spam'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الكلايش \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الكلايش \n✓'
 end
 end
 
 function unlock_spam(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'lock_spam'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الكلايش بالتأكيد تم فتحها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الكلايش بالتأكيد تم فتحها \n✓'
 else 
 redis:del(mero..'lock_spam'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الكلايش \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الكلايش \n✓'
 end
 end
 
 ---------------Lock Flood-------------------
 function lock_flood(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'lock_flood'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التكرار بالتأكيد تم قفله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التكرار بالتأكيد تم قفله \n✓'
 else
 redis:set(mero..'lock_flood'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل التكرار \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل التكرار \n✓'
 end
 end
 
 function unlock_flood(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'lock_flood'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التكرار بالتأكيد تم فتحه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التكرار بالتأكيد تم فتحه \n✓'
 else 
 redis:del(mero..'lock_flood'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح التكرار \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح التكرار \n✓'
 end
 end
 
 ---------------Lock Bots-------------------
 function lock_bots(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'lock_bots'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*البوتات بالتأكيد تم قفلها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*البوتات بالتأكيد تم قفلها \n✓'
 else
 redis:set(mero..'lock_bots'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل البوتات \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل البوتات \n✓'
 end
 end
 
 function unlock_bots(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'lock_bots'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*البوتات بالتأكيد تم فتحها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*البوتات بالتأكيد تم فتحها \n✓'
 else 
 redis:del(mero..'lock_bots_by_kick'..msg.chat_id_)
 redis:del(mero..'lock_bots'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح البوتات \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح البوتات \n✓'
 end
 end
 
 ---------------Lock Join-------------------
 function lock_join(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'lock_join'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الاضافه بالتاكيد تم قفلها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الاضافه بالتاكيد تم قفلها \n✓'
 else
 redis:set(mero..'lock_join'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الاضافه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الاضافه \n✓'
 end
 end
 
 function unlock_join(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'lock_join'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الاضافه بالتاكيد تم فتحها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الاضافه بالتاكيد تم فتحها \n✓'
 else 
 redis:del(mero..'lock_join'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الاضافه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الاضافه \n✓'
 end
 end
 
 ---------------Lock Markdown-------------------
 function lock_markdown(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'lock_markdown'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الماركدوان بالتاكيد تم قفله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الماركدوان بالتاكيد تم قفله \n✓'
 else
 redis:set(mero..'lock_markdown'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الماركدوان \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الماركدوان \n✓'
 end
 end
 
 function unlock_markdown(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'lock_markdown'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الماركدوان بالتأكيد تم فتحه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الماركدوان بالتأكيد تم فتحه \n✓'
 else 
 redis:del(mero..'lock_markdown'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الماركدوان \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الماركدوان \n✓'
 end
 end
 
 ---------------Lock Webpage-------------------
 function lock_webpage(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'lock_webpage'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الويب بالتأكيد تم قفله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الويب بالتأكيد تم قفله \n✓'
 else
 redis:set(mero..'lock_webpage'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الويب \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الويب \n✓'
 end
 end
 
 function unlock_webpage(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'lock_webpage'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الويب بالتأكيد تم فتحه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الويب بالتأكيد تم فتحه \n✓'
 else 
 redis:del(mero..'lock_webpage'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الويب \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الويب \n✓'
 end
 end
 ---------------Mute Gif-------------------
 function mute_gif(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'mute_gif'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*المتحركه بالتأكيد تم قفلها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*المتحركه بالتأكيد تم قفلها \n✓'
 else
 redis:set(mero..'mute_gif'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل المتحركه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل المتحركه \n✓'
 end
 end
 
 function unmute_gif(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'mute_gif'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*المتحركه بالتأكيد تم فتحها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*المتحركه بالتأكيد تم فتحها \n✓'
 else 
 redis:del(mero..'mute_gif'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح المتحركه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح المتحركه \n✓'
 end
 end
 ---------------Mute Game-------------------
 function mute_game(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'mute_game'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الالعاب بالتأكيد تم قفلها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الالعاب بالتأكيد تم قفلها \n✓'
 else
 redis:set('mute_game'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الالعاب \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الالعاب \n✓'
 end
 end
 
 function unmute_game(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'mute_game'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الألعاب بالتأكيد تم فتحها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الألعاب بالتأكيد تم فتحها \n✓'
 else 
 redis:del(mero..'mute_game'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الألعاب \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الألعاب \n✓'
 end
 end
 ---------------Mute Inline-------------------
 function mute_inline(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'mute_inline'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الانلاين بالتأكيد تم قفله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الانلاين بالتأكيد تم قفله \n✓'
 else
 redis:set(mero..'mute_inline'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الانلاين \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الانلاين \n✓'
 end
 end
 
 function unmute_inline(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'mute_inline'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الانلاين بالتأكيد تم فتحه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الانلاين بالتأكيد تم فتحه \n✓'
 else 
 redis:del(mero..'mute_inline'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الانلاين \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الانلاين \n✓'
 end
 end
 ---------------Mute Text-------------------
 function mute_text(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'mute_text'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الدرشه بالتأكيد تم قفلها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الدرشه بالتأكيد تم قفلها \n✓'
 else
 redis:set(mero..'mute_text'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الدردشه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الدردشه \n✓'
 end
 end
 
 function unmute_text(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'mute_text'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الدردشه بالتأكيد تم فتحها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الدردشه بالتأكيد تم فتحها \n✓'
 else 
 redis:del(mero..'mute_text'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الدردشه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الدردشه \n✓'
 end
 end
 ---------------Mute photo-------------------
 function mute_photo(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'mute_photo'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الصور بالتأكيد تم قفلها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الصور بالتأكيد تم قفلها \n✓'
 else
 redis:set(mero..'mute_photo'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الصور \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الصور \n✓'
 end
 end
 
 function unmute_photo(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'mute_photo'..msg.chat_id_)then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الصور بالتأكيد تم فتحها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الصور بالتأكيد تم فتحها \n✓'
 else 
 redis:del(mero..'mute_photo'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الصور \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الصور \n✓'
 end
 end
 ---------------Mute Video-------------------
 function mute_video(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'mute_video'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الفيديو بالتأكيد تم قفلها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الفيديو بالتأكيد تم قفلها \n✓'
 else
 redis:set(mero..'mute_video'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الفيديو \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الفيديو \n✓'
 end
 end
 
 function unmute_video(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'mute_video'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الفيديو يال��أكيد تم فتحها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الفيديو يال��أكيد تم فتحها \n✓'
 else 
 redis:del(mero..'mute_video'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الفيديو \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الفيديو \n✓'
 end
 end
 ---------------Mute Audio-------------------
 function mute_audio(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'mute_audio'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*البصمات بالتأكيد تم قفلها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*البصمات بالتأكيد تم قفلها \n✓'
 else
 redis:set(mero..'mute_audio'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل البصمات \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل البصمات \n✓'
 end
 end
 
 function unmute_audio(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'mute_audio'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*البصمات بالتأكيد تم فتحها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*البصمات بالتأكيد تم فتحها \n✓'
 else 
 redis:del(mero..'mute_audio'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح البصمات \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح البصمات \n✓'
 end
 end
 ---------------Mute Voice-------------------
 function mute_voice(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if   redis:get(mero..'mute_voice'..msg.chat_id_) then
-return '🙋✿‍♂*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الصوت بالتأكيد تم قفله \n✓'
+return '🙋•‍♂*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الصوت بالتأكيد تم قفله \n✓'
 else
 redis:set(mero..'mute_voice'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الصوت \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الصوت \n✓'
 end
 end
 
 function unmute_voice(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'mute_voice'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الصوت بالتأكيد تم فتحه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الصوت بالتأكيد تم فتحه \n✓'
 else 
 redis:del(mero..'mute_voice'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الصوت \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الصوت \n✓'
 end
 end
 ---------------Mute Sticker-------------------
 function mute_sticker(msg) 
 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 
 if   redis:get(mero..'mute_sticker'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الملصقات بالتأكيد تم قفلها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الملصقات بالتأكيد تم قفلها \n✓'
 else
 redis:set(mero..'mute_sticker'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الملصقات \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الملصقات \n✓'
 end
 end
 
 function unmute_sticker(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'mute_sticker'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الملصقات بالتأكيد تم فتحها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الملصقات بالتأكيد تم فتحها \n✓'
 else 
 redis:del(mero..'mute_sticker'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الملصقات \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الملصقات \n✓'
 end
 end
 ---------------Mute Contact-------------------
 function mute_contact(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'mute_contact'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*جهات الاتصال بالتأكيد تم قفلها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*جهات الاتصال بالتأكيد تم قفلها \n✓'
 else
 redis:set(mero..'mute_contact'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل جهات الاتصال \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل جهات الاتصال \n✓'
 end
 end
 
 function unmute_contact(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'mute_contact'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*جهات الاتصال بالتأكيد تم فتحها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*جهات الاتصال بالتأكيد تم فتحها \n✓'
 else 
 redis:del(mero..'mute_contact'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح جهات الاتصال \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح جهات الاتصال \n✓'
 end
 end
 ---------------Mute Forward-------------------
 function mute_forward(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'mute_forward'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التوجيه بالتأكيد تم قفلها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التوجيه بالتأكيد تم قفلها \n✓'
 else
 redis:set(mero..'mute_forward'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل التوجيه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل التوجيه \n✓'
 end
 end
 
 function unmute_forward(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'mute_forward'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التوجيه بالتأكيد تم فتحها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التوجيه بالتأكيد تم فتحها \n✓'
 else 
 redis:del(mero..'mute_forward'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح التوجيه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح التوجيه \n✓'
 end
 end
 ---------------Mute Location-------------------
 function mute_location(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'mute_location'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الموقع بالتأكيد تم قفله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الموقع بالتأكيد تم قفله \n✓'
 else
 redis:set(mero..'mute_location'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الموقع \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الموقع \n✓'
 end
 end
 
 function unmute_location(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'mute_location'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الموقع بالتأكيد تم فتحه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الموقع بالتأكيد تم فتحه \n✓'
 else 
 redis:del(mero..'mute_location'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الموقع \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الموقع \n✓'
 end
 end
 ---------------Mute Document-------------------
 function mute_document(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'mute_document'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الملفات بالتأكيد تم قفلها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الملفات بالتأكيد تم قفلها \n✓'
 else
 redis:set(mero..'mute_document'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الملفات \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الملفات \n✓'
 end
 end
 
 function unmute_document(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'mute_document'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الملفات بالتأكيد تم فتحها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الملفات بالتأكيد تم فتحها \n✓'
 else 
 redis:del(mero..'mute_document'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الملفات \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الملفات \n✓'
 end
 end
 ---------------Mute TgService-------------------
 function mute_tgservice(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'mute_tgservice'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الاشعارات بالتأكيد تم قفلها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الاشعارات بالتأكيد تم قفلها \n✓'
 else
 redis:set(mero..'mute_tgservice'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الاشعارات \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الاشعارات \n✓'
 end
 end
 
 function unmute_tgservice(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'mute_tgservice'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الاشعارات بالتأكيد تم فتحها \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الاشعارات بالتأكيد تم فتحها \n✓'
 else 
 redis:del(mero..'mute_tgservice'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الاشعارات \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الاشعارات \n✓'
 end
 end
 
 ---------------Mute Keyboard-------------------
 function mute_keyboard(msg) 
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'mute_keyboard'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الكيبورد بالتأكيد تم قفله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الكيبورد بالتأكيد تم قفله \n✓'
 else
 redis:set(mero..'mute_keyboard'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل الكيبورد \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل الكيبورد \n✓'
 end
 end
 
 function unmute_keyboard(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'mute_keyboard'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*الكيبورد بالتأكيد تم فتحه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*الكيبورد بالتأكيد تم فتحه \n✓'
 else 
 redis:del(mero..'mute_keyboard'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح الكيبورد \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح الكيبورد \n✓'
 end
 end
 
 ---------------lock_bots_by_kick-------------------
 function lock_bots_by_kick(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'lock_bots_by_kick'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*البوتات بالطرد بالتاكيد تم قفله \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*البوتات بالطرد بالتاكيد تم قفله \n✓'
 else
 redis:set(mero..'lock_bots'..msg.chat_id_,true)
 redis:set(mero..'lock_bots_by_kick'..msg.chat_id_,true)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم قفل البوتات بالطرد (مع طرد الي ضافه) \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم قفل البوتات بالطرد (مع طرد الي ضافه) \n✓'
 end
 end
 
 function unlock_bots_by_kick(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'lock_bots_by_kick'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*البوتات بالطرد بالتاكيد مفتوحه \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*البوتات بالطرد بالتاكيد مفتوحه \n✓'
 else 
 redis:del(mero..'lock_bots_by_kick'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تم فتح البوتات بالطرد  \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تم فتح البوتات بالطرد  \n✓'
 end
 end
 ---------------locks pin-------------------
 function lock_pin(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if redis:get(mero..'lock_pin'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التثبيت بالفعل مقفل \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التثبيت بالفعل مقفل \n✓'
 else
 redis:set(mero..'lock_pin'..msg.chat_id_,true) 
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تـم قفل التثبيت \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تـم قفل التثبيت \n✓'
 end
 end
 
 function unlock_pin(msg)
-if not msg.Admin then return "✿│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
+if not msg.Admin then return "•│هذا الامر يخص {الادمن,المدير,المنشئ,المالك,المطور} فقط  " end
 if not redis:get(mero..'lock_pin'..msg.chat_id_) then
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*التثبيت بالفعل مفتوح \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*التثبيت بالفعل مفتوح \n✓'
 else 
 redis:del(mero..'lock_pin'..msg.chat_id_)
-return '✿*╿*أهلا عزيزي '..msg.TheRankCmd..'\n✿*╽*تـم فتح التثبيت   \n✓'
+return '•*╿*أهلا عزيزي '..msg.TheRankCmd..'\n•*╽*تـم فتح التثبيت   \n✓'
 end
 end
 function Flterzhrfa(Name)
@@ -1331,7 +1331,7 @@ end
 
 function FlterEmoje(Name)
 Name = tostring(Name)
-Name = utf8.gsub(Name,"[🤚🔕♠🤗😇💂🌶🤣🚹⛸⚠😅🍕🍛🧝✿💛#😕🧞*1032547🥌98🎡🎋🏼✿🤑🚮☠🥜⃣🛌🌙🚙👏🛍💑⛳🏌🍢👲🔡❤🐀😨🥁🦇🏣㊗✿🚒🌟🐾🦅🐃🐷🤲🎩📳🇼🍎👛◻💻➗🔪🎂🌪🔔🍊✊🐚🍽🍫❗🚴🎒♏🧢🍁🌓😸🍦󠁢😶🗓🐡✿✏😉🎯🍋✿🔳🌨🎱💟⛏🤳📆✿🍴📲🥊🖍🌡✿🆑🐇🗺😾🕰📵🏈🇮🍥➰🤠✿🕥😃😤😔🐹✿⌛💎☃📖🔨👫🙄🥒⚜🏫🥃🍘🥥📍🦕💜🗝🙃🕤🐯👤🧔🏭🚭🚘💒🐓👁🤾🏐🏮🚋🌾📗🥈📚🤧🏃〰👱🔧🥖🇾☘🔘🔙⚗🛡🏖💹🉑🚛💩🛏♋🔸💴⏬✋👷😞☎🦂🎽✿️🌘✿⛵🈺🏸🎍✿🐪🍑😙🤓⚓󠁴✿🌔😵🥦📇🐌♓😘😢🐙🕦🏆🚨❇🙎🔶🛂🍲🥟📉🐕🍳🚈🔞😳🔌😊🌅✿⛓🚻🚁✨✿🌊⚛😆😿🎈🏗🇭❓🙀🐨🚡🤢🔃▫🇶👿🤤✿🖋👕🐔😮🔵👂🌏⏏👦🐧🕎◾🍺🌧🖐📟🧙👶🌤↖🏬🤜⌚🏋🛐™🍜🤯🧣↘🔣🐣🥘✿🎌😓✿🚐🧚💲🍡😪✿🖖⛽🏑⛲🎢🥗🚌🦁🚆☺🕒🎛⛹💏🐼🍶🚑🕞🤮🕕⏫🤰‼✿🏀😰🌎📻󠁥🍂🇻🎴👸💼✿💆🕹👧🛩🍚❣🍓🤥🐄🍒♎🔽👵🔓🍠💍🏉▶🎠🎊👡📎💖🔺😺🍱📀⛎😽😷☣🦃🌯⛷🖼🚄✿✿🦎♣✿🍹‍🌱🛃🦄🦒🐈🕸🏟✖🚍😥↪🤝🏇⬇🌦🔄🚖⏺⬛♂⏲💁🚧🔤🚼👞🏄😩☂🕜🌚🧒⏯✿🏯🌭🍵🔭💐🐤🕠💗🚎🛋🍧✿🏽👒🤷🇸👘☝👴🔷⚖✴🉐✂🥂🕊👹⛴👅🚞😂📪🐺🦀󠁣🌃✉♒🤩🥕✿🚀🕢😟🕵🇪👃✿🏪🤟💿🥫😚🏩🏔🍏👢🏙📈✿💝👠✿🚲🖲⁉🇨🌳🚯🧀🕌🛶⛪🍌🧓🙈🇿⤴😬☪⚽🌈📔㊙💇🇯🗿🙁🍅☯🍞😠👍🕴▪✿💋🖱🎗🙌😎🐦🥡🔦💉🌺✿🛣🕘🎶👳🍮🌜🐰↙🚔🕖🎿↕🐑✿⛺🖕🧜🔟🖨🏕🎻🥝🎾🥐🤙🈳⚾✿👣🚗🥧🏤🚕✿🤬🛷🤱🚏🚅🐂🐋🐜🤘⏪🦗⚱🔻👌〽👼💀👝☦⛱⏹󠁷📼📄🕺🎓😍🚩󠁧🔹🧡🥨✿🦌🤹ℹ✿♉💨🏴✿🗼🏥🤪✿󠁳🏊🧟👖🙉☢🙇✿👬📱🍈🏘🍐🕐😫🛄🧠🛥👭🎇🍭✿🦑♍🐟🚃💧😋✿🕍🚾✍🗽😹🎹🛒🧥🔎👓🚚🦖📷🤛👗🔜🥔🍖😄🔠💘🐴🤕󠁬🎄🧖🍗😈😧🈷🐽🌂♑✿🛑📁🧑🛰✿☕🐒✿⛈🤨👐⛑🇳🔢✿💪🍀⏸🌍💙✿👺🍍🈸😜🈂⏮↩🌩🌵✈🏁😻👚✿✿🔈☮🍬⛅🍸🐍✿🎅🚿🏎🏳😁🚵💞🐢🐩💃😛✿😴🕋🍆📯🥀💅🚳🙂🤶🌑⭕☁🥋👇🌌🍝😡✿🔆✿💶🥠🆓🌲👀🚢🕚💔🍇🦍⚕🇱🇰🦓🎧🥉🏺◼🌰🧦🔍💊🐠🌼🛎✅☸⚡💌👉🤵💕🚣✿👑🌽🚓😑📏👔♥◀🤽🐝🕛😌🧗🈵✿🔐🈴🌕🌛🦐🎣🥞💣↔👾🅰😐🕟🥙👰🐏🚷🐆✿🥇👻🐲🌸🧘♨🎼🌗🌠✡🎤🅿🚬⛰🤞🍙🏓🔝💳🦋🕉🥚✿🍪🛫🗜🔬🏡🤭🏚✿❔💄🌥🕔✌🌫󠁮🐁👟🐛♈😭✿🇦🔑🌞🐊✿📒🎦🌴🍟🚉🍉💓🐮💷🔱💽🚇🐫🚥🐘✿🥑🔲🛤🙍🐬📧⬅🐥⛔󠁿🏹👨🌝🇽🐖📿🔼😖😼📘🙋🥛🚺⏩🍾🗞🌹📠🗾✿🏵🎃😝🖤🏒🛸🍯🦈🚜✿✿🌁💤😦💦👯®✿👽👩💺✿✿✿✿✿👪🦆👙🦔📴🧐⏭🇴👄💚🎚📹🛢🐐🇷🍄🌖😀🌬🧤🐿❄🕝🍩🛵🔏🖊✒🍔🖌🖇🔇📐🧕📕✿📙📂✿📓✿✿🗳🗄✿📨🏅✿📤✿📫🔯✿✿🎐📩🈁🗡📃📥✿🎏🛴🎀✿😗🚪🚽🚰🕓♀🆕🐸💈🕳🐭🔋⚰😱🔩⚙🔫💡🕯🚟💸🕗💵⏰⏳📺✿✿🛳💾🕧🙊⌨🖥🕡🕣🕙🀄☀🕑🏢🛁✿♦🇲🃏✿✿🎳🏜⬜⚪⚫🔴➿🔚✔🤦🏍✿🎵⤵🔀➡⬆↗6🎺🆙🆒🔮🆖🆗🏧🛅🇺♿🦉✿✳❎⛩✿🌀♻🥅🈯🚱✿🚫🏠🅱🕶🌆🎸🚂🅾🆘✿✿🈹🈲🈶🈚☹🆚💮⭐✿🐗♌♐🤴☔♊😯✝🇵📶🇹🇧🇩🇬🇫🎆🌇🌉🏛🏦🏨🏝◽😲🗻⛄🏰🚤🚊🛬🚝🚠🎷🆎🤸🤺🏂🤼🏏🥣🥢🍷🥄🍼🌻🥤🍻🍿🍰🌮🍣🍤🥪🍨🥓🥩✿🌒💫🌷🐉🐎🦏🐳🐅🕷😏🐵🐶🐱⚔🦊✿👜✿✿*│*🙅🙆🧛✿🗃👆👎🤒😣]",'')	
+Name = utf8.gsub(Name,"[🤚🔕♠🤗😇💂🌶🤣🚹⛸⚠😅🍕🍛🧝•💛#😕🧞*1032547🥌98🎡🎋🏼•🤑🚮☠🥜⃣🛌🌙🚙👏🛍💑⛳🏌🍢👲🔡❤🐀😨🥁🦇🏣㊗•🚒🌟🐾🦅🐃🐷🤲🎩📳🇼🍎👛◻💻➗🔪🎂🌪🔔🍊✊🐚🍽🍫❗🚴🎒♏🧢🍁🌓😸🍦󠁢😶🗓🐡•✏😉🎯🍋•🔳🌨🎱💟⛏🤳📆•🍴📲🥊🖍🌡•🆑🐇🗺😾🕰📵🏈🇮🍥➰🤠•🕥😃😤😔🐹•⌛💎☃📖🔨👫🙄🥒⚜🏫🥃🍘🥥📍🦕💜🗝🙃🕤🐯👤🧔🏭🚭🚘💒🐓👁🤾🏐🏮🚋🌾📗🥈📚🤧🏃〰👱🔧🥖🇾☘🔘🔙⚗🛡🏖💹🉑🚛💩🛏♋🔸💴⏬✋👷😞☎🦂🎽•️🌘•⛵🈺🏸🎍•🐪🍑😙🤓⚓󠁴•🌔😵🥦📇🐌♓😘😢🐙🕦🏆🚨❇🙎🔶🛂🍲🥟📉🐕🍳🚈🔞😳🔌😊🌅•⛓🚻🚁✨•🌊⚛😆😿🎈🏗🇭❓🙀🐨🚡🤢🔃▫🇶👿🤤•🖋👕🐔😮🔵👂🌏⏏👦🐧🕎◾🍺🌧🖐📟🧙👶🌤↖🏬🤜⌚🏋🛐™🍜🤯🧣↘🔣🐣🥘•🎌😓•🚐🧚💲🍡😪•🖖⛽🏑⛲🎢🥗🚌🦁🚆☺🕒🎛⛹💏🐼🍶🚑🕞🤮🕕⏫🤰‼•🏀😰🌎📻󠁥🍂🇻🎴👸💼•💆🕹👧🛩🍚❣🍓🤥🐄🍒♎🔽👵🔓🍠💍🏉▶🎠🎊👡📎💖🔺😺🍱📀⛎😽😷☣🦃🌯⛷🖼🚄••🦎♣•🍹‍🌱🛃🦄🦒🐈🕸🏟✖🚍😥↪🤝🏇⬇🌦🔄🚖⏺⬛♂⏲💁🚧🔤🚼👞🏄😩☂🕜🌚🧒⏯•🏯🌭🍵🔭💐🐤🕠💗🚎🛋🍧•🏽👒🤷🇸👘☝👴🔷⚖✴🉐✂🥂🕊👹⛴👅🚞😂📪🐺🦀󠁣🌃✉♒🤩🥕•🚀🕢😟🕵🇪👃•🏪🤟💿🥫😚🏩🏔🍏👢🏙📈•💝👠•🚲🖲⁉🇨🌳🚯🧀🕌🛶⛪🍌🧓🙈🇿⤴😬☪⚽🌈📔㊙💇🇯🗿🙁🍅☯🍞😠👍🕴▪•💋🖱🎗🙌😎🐦🥡🔦💉🌺•🛣🕘🎶👳🍮🌜🐰↙🚔🕖🎿↕🐑•⛺🖕🧜🔟🖨🏕🎻🥝🎾🥐🤙🈳⚾•👣🚗🥧🏤🚕•🤬🛷🤱🚏🚅🐂🐋🐜🤘⏪🦗⚱🔻👌〽👼💀👝☦⛱⏹󠁷📼📄🕺🎓😍🚩󠁧🔹🧡🥨•🦌🤹ℹ•♉💨🏴•🗼🏥🤪•󠁳🏊🧟👖🙉☢🙇•👬📱🍈🏘🍐🕐😫🛄🧠🛥👭🎇🍭•🦑♍🐟🚃💧😋•🕍🚾✍🗽😹🎹🛒🧥🔎👓🚚🦖📷🤛👗🔜🥔🍖😄🔠💘🐴🤕󠁬🎄🧖🍗😈😧🈷🐽🌂♑•🛑📁🧑🛰•☕🐒•⛈🤨👐⛑🇳🔢•💪🍀⏸🌍💙•👺🍍🈸😜🈂⏮↩🌩🌵✈🏁😻👚••🔈☮🍬⛅🍸🐍•🎅🚿🏎🏳😁🚵💞🐢🐩💃😛•😴🕋🍆📯🥀💅🚳🙂🤶🌑⭕☁🥋👇🌌🍝😡•🔆•💶🥠🆓🌲👀🚢🕚💔🍇🦍⚕🇱🇰🦓🎧🥉🏺◼🌰🧦🔍💊🐠🌼🛎✅☸⚡💌👉🤵💕🚣•👑🌽🚓😑📏👔♥◀🤽🐝🕛😌🧗🈵•🔐🈴🌕🌛🦐🎣🥞💣↔👾🅰😐🕟🥙👰🐏🚷🐆•🥇👻🐲🌸🧘♨🎼🌗🌠✡🎤🅿🚬⛰🤞🍙🏓🔝💳🦋🕉🥚•🍪🛫🗜🔬🏡🤭🏚•❔💄🌥🕔✌🌫󠁮🐁👟🐛♈😭•🇦🔑🌞🐊•📒🎦🌴🍟🚉🍉💓🐮💷🔱💽🚇🐫🚥🐘•🥑🔲🛤🙍🐬📧⬅🐥⛔󠁿🏹👨🌝🇽🐖📿🔼😖😼📘🙋🥛🚺⏩🍾🗞🌹📠🗾•🏵🎃😝🖤🏒🛸🍯🦈🚜••🌁💤😦💦👯®•👽👩💺•••••👪🦆👙🦔📴🧐⏭🇴👄💚🎚📹🛢🐐🇷🍄🌖😀🌬🧤🐿❄🕝🍩🛵🔏🖊✒🍔🖌🖇🔇📐🧕📕•📙📂•📓••🗳🗄•📨🏅•📤•📫🔯••🎐📩🈁🗡📃📥•🎏🛴🎀•😗🚪🚽🚰🕓♀🆕🐸💈🕳🐭🔋⚰😱🔩⚙🔫💡🕯🚟💸🕗💵⏰⏳📺••🛳💾🕧🙊⌨🖥🕡🕣🕙🀄☀🕑🏢🛁•♦🇲🃏••🎳🏜⬜⚪⚫🔴➿🔚✔🤦🏍•🎵⤵🔀➡⬆↗6🎺🆙🆒🔮🆖🆗🏧🛅🇺♿🦉•✳❎⛩•🌀♻🥅🈯🚱•🚫🏠🅱🕶🌆🎸🚂🅾🆘••🈹🈲🈶🈚☹🆚💮⭐•🐗♌♐🤴☔♊😯✝🇵📶🇹🇧🇩🇬🇫🎆🌇🌉🏛🏦🏨🏝◽😲🗻⛄🏰🚤🚊🛬🚝🚠🎷🆎🤸🤺🏂🤼🏏🥣🥢🍷🥄🍼🌻🥤🍻🍿🍰🌮🍣🍤🥪🍨🥓🥩•🌒💫🌷🐉🐎🦏🐳🐅🕷😏🐵🐶🐱⚔🦊•👜••*│*🙅🙆🧛•🗃👆👎🤒😣]",'')	
 
 return Name
 end
