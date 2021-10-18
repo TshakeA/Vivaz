@@ -1929,7 +1929,7 @@ if Json_Info.result.can_delete_messages ~= true then
 return  "ليست لدي صلاحيه المسح"
 end
 end
-if not msg.Admin then return "📪¦ هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n" end
+if not msg.Admin then return "•| هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n" end
 Del_msg(msg.chat_id_, msg.reply_id) 
 Del_msg(msg.chat_id_, msg.id_) 
 return false
@@ -1945,7 +1945,7 @@ end
 end
 if not msg.Director then return "•*│*هذا الامر يخص { المطور ، المالك ، المنشئ الاساسي ، المنشئ ، المدير } فقط  \n•" end
 if tonumber(MsgText[2]) > 1000 then 
-sendMsg(msg.chat_id_, msg.id_,'•┇لا تستطيع تنظيف اكثر من *~ 1000* رساله') 
+sendMsg(msg.chat_id_, msg.id_,'•|لا تستطيع تنظيف اكثر من *~ 1000* رساله') 
 return false  
 end  
 local Message = msg.id_
@@ -1953,7 +1953,7 @@ for i=1,tonumber(MsgText[2]) do
 Del_msg(msg.chat_id_, Message) 
 Message = Message - 1048576
 end
-sendMsg(msg.chat_id_, msg.id_,'•┇تم تنظيف *~ '..MsgText[2]..'* رساله .')  
+sendMsg(msg.chat_id_, msg.id_,'•|تم تنظيف *~ '..MsgText[2]..'* رساله .')  
 return false
 end
 
@@ -2014,7 +2014,7 @@ if MsgText[2] == "المنشئين الاساسين" then
 if not msg.malk then return "•*│*هذا الامر يخص {المطور الاساسي ، المطور ، المالك} فقط  \n•" end
 local NumMnsha = redis:scard(mero..':KARA_BOT:'..msg.chat_id_)
 if NumMnsha ==0 then 
-return "•عذرا لا يوجد المنشىء الاساسي 🌟 \n!" 
+return "•عذرا لا يوجد المنشىء الاساسي  \n!" 
 end
 redis:del(mero..':KARA_BOT:'..msg.chat_id_)
 return "•*╿*أهلا عزيزي "..msg.TheRankCmd.."   \n•| تم مسح {* "..NumMnsha.." *} المنشىء الاساسي 🌟 \n✓"
@@ -2023,7 +2023,7 @@ if MsgText[2] == "المنشئين الاساسيين" then
 if not msg.malk then return "•*│*هذا الامر يخص {المطور الاساسي ، المطور ، المالك} فقط  \n•" end
 local NumMnsha = redis:scard(mero..':KARA_BOT:'..msg.chat_id_)
 if NumMnsha ==0 then 
-return "•عذرا لا يوجد المنشىء الاساسي 🌟 \n!" 
+return "•عذرا لا يوجد المنشىء الاساسي  \n!" 
 end
 redis:del(mero..':KARA_BOT:'..msg.chat_id_)
 return "•*╿*أهلا عزيزي "..msg.TheRankCmd.."   \n•| تم مسح {* "..NumMnsha.." *} المنشىء الاساسي 🌟 \n✓"
@@ -2171,7 +2171,7 @@ end ,nil)
 return false
 else 
 redis:setex(mero..'photo:group'..msg.chat_id_..msg.sender_user_id_,300,true)
-return '•|حسننا عزيزي 🍁\n•|الان قم بارسال الصوره\n•' 
+return '•|حسننا عزيزي 🍁\n•|الحين قم بارسال الصوره\n•' 
 end 
 end
 
@@ -2179,7 +2179,7 @@ end
 if MsgText[1] == "ضع وصف" then 
 if not msg.Creator then return "•*│*هذا الامر يخص { المطور,المالك,المنشئ } فقط  \n•" end
 redis:setex(mero..'about:witting'..msg.sender_user_id_,300,true) 
-return "•|حسننا عزيزي  \n•|الان ارسل الوصف  للمجموعه\n•" 
+return "•|حسننا عزيزي  \n•|الحين ارسل الوصف  للمجموعه\n•" 
 end
 
 
@@ -2317,11 +2317,11 @@ local Namei = FlterName(data.first_name_..' '..(data.last_name_ or ""),20)
 GetPhotoUser(msg.sender_user_id_,function(arg, data)
 if redis:get(mero.."getidstatus"..msg.chat_id_) == "Photo" then
 	if data.photos_[0] then 
-		ali = {'❤❤❤❤❤️','🧡🧡🧡🧡🧡','💛💛💛💛💛','💚💚💚💚💚','💙💙💙💙💙️','💜💜💜💜💜','🤎🤎🤎🤎🤎️','🖤🖤🖤🖤🖤','🤍🤍🤍🤍🤍',
+		ali = {'حلو','جبر','افتارك يعني','عاشت ايديك','مليت','واوو','🤎🤎🤎🤎🤎️','ياعيني','🤍🤍🤍🤍🤍',
 		}
 		ssssys = ali[math.random(#ali)]
 		if not redis:get("KLISH:ID") then
-		sendPhoto(msg.chat_id_,msg.id_,data.photos_[0].sizes_[1].photo_.persistent_id_,'✹                   '..ssssys..'\n✹ ʏᴏᴜʀ ɪᴅ ➥• ❪ '..msg.sender_user_id_..' ❫\n✹ ᴜѕᴇʀɴᴀᴍᴇ ➥• ❪ '..UserNameID..' ❫\n✹ ѕᴛᴀᴛѕ ➥• ❪ '..msg.TheRank..' ❫\n✹ᴅᴇᴛᴀɪʟs ➥• ❪ '..Get_Ttl(msgs)..' ❫\n✹ᴍѕɢѕ ➥• ❪ '..msgs..' ❫\n✹ᴇᴅɪᴛ ᴍsɢ ➥• ❪ '..rfih..' ❫\n✹ ɢᴀᴍᴇ ➥• ❪ '..nko..' ❫',dl_cb,nil)
+		sendPhoto(msg.chat_id_,msg.id_,data.photos_[0].sizes_[1].photo_.persistent_id_,'•                   '..ssssys..'\n- 𝙸𝙳 •❪ '..msg.sender_user_id_..' ❫\n- 𝚄𝚂𝙴𝚁 •❪ '..UserNameID..' ❫\n- 𝚂𝚃𝙰𝚂𝚃 •❪ '..msg.TheRank..' ❫\n- 𝙳𝙴𝚃𝙰𝙸𝙻𝚂 ⚚ •❪ '..Get_Ttl(msgs)..' ❫\n- 𝙼𝚂𝙶𝚂 •❪ '..msgs..' ❫\n- 𝙴𝙳𝙸𝚃𝙼𝚂𝙶 •❪ '..rfih..' ❫\n- 𝙶𝙰𝙼𝙴 𓃠 •❪ '..nko..' ❫',dl_cb,nil)
 		else
 		Text = redis:get("KLISH:ID")
 		Text = Text:gsub('IDGET',msg.sender_user_id_)
@@ -2336,7 +2336,7 @@ if redis:get(mero.."getidstatus"..msg.chat_id_) == "Photo" then
 		end
 	else
 		if not redis:get("KLISH:ID") then
-		sendMsg(msg.chat_id_,msg.id_,'•لا يمكنني عرض صورتك لانك قمت بحظر البوت او انك لاتملك صوره في بروفيلك ...!\n✹ ɴᴀᴍᴇ ➥• ❪ '..Namei..' ❫\n✹ ᴜѕᴇʀɴᴀᴍᴇ ➥• ❪ ['..UserNameID..'] ❫\n✹ ʏᴏᴜʀ ɪᴅ ➥• ❪ '..msg.sender_user_id_..' ❫\n✹ ѕᴛᴀᴛѕ ➥• ❪ '..msg.TheRank..' ❫\n✹ᴅᴇᴛᴀɪʟs ➥• ❪ '..Get_Ttl(msgs)..' ❫\n✹ᴍѕɢѕ ➥• ❪ '..msgs..' ❫\n✹ᴇᴅɪᴛ ᴍsɢ ➥• ❪ '..rfih..' ❫\n✹AddUser ➥• ❪ '..NumGha..' ❫\n✹ ɢᴀᴍᴇ ➥• ❪ '..nko..' ❫\n')
+		sendMsg(msg.chat_id_,msg.id_,'•لا يمكنني عرض صورتك لانك قمت بحظر البوت او انك لاتملك صوره في بروفيلك ...!\n- 𝚄𝚂𝙴𝚁𝙽𝙰𝙼𝙴 • ❪ '..Namei..' ❫\n- 𝚄𝚂𝙴𝚁 •❪ ['..UserNameID..'] ❫\n- 𝙸𝙳 •❪ '..msg.sender_user_id_..' ❫\n- 𝚂𝚃𝙰𝚂𝚃 •❪ '..msg.TheRank..' ❫\n- 𝙳𝙴𝚃𝙰𝙸𝙻𝚂 ⚚ •❪ '..Get_Ttl(msgs)..' ❫\n- 𝙼𝚂𝙶𝚂 •❪ '..msgs..' ❫\n- 𝙴𝙳𝙸𝚃𝙼𝚂𝙶 •❪ '..rfih..' ❫\n- 𝙰𝚍𝚍𝚄𝚜𝚎𝚛 •❪ '..NumGha..' ❫\n- 𝙶𝙰𝙼𝙴 𓃠 •❪ '..nko..' ❫\n')
 		else
 		Text = redis:get("KLISH:ID")
 		Text = Text:gsub('IDGET',msg.sender_user_id_)
@@ -2463,13 +2463,13 @@ local edited = (redis:get(mero..':edited:'..msg.chat_id_..':'..msg.sender_user_i
 local video = (redis:get(mero..':video:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
 
 local Get_info ="•اهـلا بـك عزيزي في معلوماتك 🥀 \n"
-.."𖤍━┅┄⟞⟦• Mes •⟧⟝┄┉━𖤍\n"
+.."• Mes •\n"
 .."•|الاســم ❪ "..FlterName(data.first_name_..' '..(data.last_name_ or ""),25).." ❫\n"
 .."•المعرف ❪ "..ResolveUser(data).." ❫\n"
 .."•الايـدي ❪ `"..msg.sender_user_id_.."` ❫\n"
 .."•رتبتــك ❪ "..msg.TheRank.."❫\n"
 .."•|ـ ❪ `"..msg.chat_id_.."` ❫\n"
-.."𖤍━┅┄⟞⟦• Mes •⟧⟝┄┉━𖤍\n"
+.."• Mes •\n"
 .." ❪ احـصـائـيـات الـرسـائـل ❫\n ـــــــــــــــــــــــــــــــــــــــــــــــــــــــ \n"
 .."•|الـرسـائـل ❪ `"..msgs.."` ❫\n"
 .."•الـجـهـات ❪ `"..NumGha.."` ❫\n"
@@ -2846,8 +2846,8 @@ end
 if MsgText[1] == "صوره الترحيب" then
 local Photo_Weloame = redis:get(mero..':WELCOME_BOT')
 if Photo_Weloame then
-sendPhoto(msg.chat_id_,msg.id_,Photo_Weloame,[[⚜╿اهلا انا بوت اسـمـي ]]..redis:get(mero..':NameBot:')..[[ ✓
-👨🏻‍✈️│اختصـاصـي حمـايه المـجمـوعات
+sendPhoto(msg.chat_id_,msg.id_,Photo_Weloame,[[•╿اهلا انا بوت اسـمـي ]]..redis:get(mero..':NameBot:')..[[ ✓
+•│اختصـاصـي حمـايه المـجمـوعات
 •|مـن السـبام والتوجيه‌‏ والتكرار والخ...
 
 •مـعـرف الـمـطـور  » ]]..SUDO_USER:gsub([[\_]],'_')..[[•
@@ -3104,7 +3104,7 @@ Uploaded_Groups_CH = msg.chat_id_
 Uploaded_Groups_MS = msg.id_
 print(Uploaded_Groups_CH)
 print(Uploaded_Groups_MS)
-sendMsg(msg.chat_id_,msg.id_,'⏳*│* جاري رفع النسخه انتظر قليلا ... \n⌛️')
+sendMsg(msg.chat_id_,msg.id_,'•*│* جاري رفع النسخه انتظر قليلا ... \n⌛️')
 end
 end,nil)
 else 
@@ -3131,7 +3131,7 @@ if not msg.SudoBase then return"•*│*هذا الامر يخص { المطور 
 return "🟢 البوت شـغــال 🟢" 
 end
 
-if (MsgText[1]== "ايدي" or MsgText[1]=="ايديي•") and msg.type == "pv" then return  "\n• | اهلاً عزيزي المطور ايديك هو ⏬\n\n•"..msg.sender_user_id_.."\n"  end
+if (MsgText[1]== "ايدي" or MsgText[1]=="ايديي") and msg.type == "pv" then return  "\n• | اهلاً عزيزي المطور ايديك هو ⏬\n\n•"..msg.sender_user_id_.."\n"  end
 
 if MsgText[1]== "قناة السورس •" and msg.type == "pv" then
 local inline = {{{text="⚜│قناہ‏‏ السـورس ضـغـط هـنـا ",url="t.me/rnnni"}}}
@@ -3168,14 +3168,14 @@ local video 	= redis:exists(mero..'replay_video:group:'..msg.chat_id_)
 if names or photo or voice or imation or audio or sticker or video then
 redis:del(mero..'replay:'..msg.chat_id_,mero..'replay_photo:group:'..msg.chat_id_,mero..'replay_voice:group:'..msg.chat_id_,
 mero..'replay_animation:group:'..msg.chat_id_,mero..'replay_audio:group:'..msg.chat_id_,mero..'replay_sticker:group:'..msg.chat_id_,mero..'replay_video:group:'..msg.chat_id_)
-return "✓ تم مسح كل الردود 🚀"
+return "✓ تم مسح كل الردود "
 else
 return '•*│* لا يوجد ردود ليتم مسحها \n•'
 end
 end
 
 if MsgText[1]== 'مسح' and MsgText[2]== 'الردود العامه' then
-if not msg.SudoBase then return"♨️ للمطورين فقط ! •" end
+if not msg.SudoBase then return" للمطورين فقط ! •" end
 local names 	= redis:exists(mero..'replay:all')
 local photo 	= redis:exists(mero..'replay_photo:group:')
 local voice 	= redis:exists(mero..'replay_voice:group:')
@@ -3185,9 +3185,9 @@ local sticker 	= redis:exists(mero..'replay_sticker:group:')
 local video 	= redis:exists(mero..'replay_video:group:')
 if names or photo or voice or imation or audio or sticker or video then
 redis:del(mero..'replay:all',mero..'replay_photo:group:',mero..'replay_voice:group:',mero..'replay_animation:group:',mero..'replay_audio:group:',mero..'replay_sticker:group:',mero..'replay_video:group:')
-return "✓ تم مسح كل الردود العامه🚀"
+return "✓ تم مسح كل الردود العامه"
 else
-return "لا يوجد ردود عامه ليتم مسحها ! 🚀"
+return "لا يوجد ردود عامه ليتم مسحها ! "
 end
 end
 
@@ -3224,7 +3224,7 @@ return message..'\n'
 end
 
 if MsgText[1]== 'الردود العامه' or MsgText[1]=='الردود العامه •' then
-if not msg.SudoBase then return "♨️ للمطور فقط ! •" end
+if not msg.SudoBase then return " للمطور فقط ! •" end
 local names 	= redis:hkeys(mero..'replay:all')
 local photo 	= redis:hkeys(mero..'replay_photo:group:')
 local voice 	= redis:hkeys(mero..'replay_voice:group:')
@@ -3307,35 +3307,20 @@ if msg.type == 'channel' and msg.GroupActive then
 	if MsgText[1] == "الاوامر" then
 	if not msg.Admin then return "•*│*هذا الامر يخص { الادمن,المدير,المنشئ,المالك,المطور } فقط  \n•" end
 	local texs = [[
-• اهلا بك عزيزي 
-• الاوامر العامه
-   ━━━━━
-• م1 - اوامر الاداره 
-• م2 - اعدادات المجموعه 
-• م3 - اوامر الحمايه 
-• م4 - اوامر الخدمه 
-• م5 - اوامر التحشيش 
-• م6 - التفعيل و التعطيل 
-• م7 - الوضع للمجموعه 
-• الحمايه - اعدادات الحمايه 
-• الوسائط - اعدادات الوسائط 
-• الاعدادات - اعدادات المجموعه 
-• الالعاب - العاب البوت 
-• السورس - سورس البوت 
-• المطور - مطور البوت 
-• م المطور - اوامر المطور 
+
+هلا فيك في اوامر البوت 
    ━━━━━
 Carbon - ]]..SUDO_USER
 	 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𝟭', callback_data="/help1@"..msg.sender_user_id_},{text = '𝟮', callback_data="/help2@"..msg.sender_user_id_},{text = '𝟯', callback_data="/help3@"..msg.sender_user_id_},
+{text = '𝟭', callback_data="/help1@"..msg.sender_user_id_},{text = '𝟮', callback_data="/help2@"..msg.sender_user_id_},{text = 'الحمايه', callback_data="/help3@"..msg.sender_user_id_},
 },
 {
-{text = '𝟰', callback_data="/help4@"..msg.sender_user_id_},{text = '𝟱', callback_data="/help5@"..msg.sender_user_id_},
+{text = '𝟰', callback_data="/help4@"..msg.sender_user_id_},{text = 'التحشيش', callback_data="/help5@"..msg.sender_user_id_},
 },
 {
-{text = '𝟲', callback_data="/help6@"..msg.sender_user_id_},{text = '𝟳', callback_data="/help7@"..msg.sender_user_id_},
+{text = '𝟲', callback_data="/help6@"..msg.sender_user_id_},{text = 'اوامر الوضع', callback_data="/help7@"..msg.sender_user_id_},
 },
 {
 {text = 'الالعاب  ', callback_data="/helpgames@"..msg.sender_user_id_},
@@ -3697,7 +3682,7 @@ if msg.Admin then return "•*│*لا استطيع طرد المدراء وال
 kick_user(msg.sender_user_id_,msg.chat_id_,function(arg,data)
 if data.ID == "Ok" then
 StatusLeft(msg.chat_id_,msg.sender_user_id_)
-send_msg(msg.sender_user_id_,"👨🏼‍⚕️╿اهلا عزيزي , لقد تم طردك من المجموعه بامر منك \n•|اذا كان هذا بالخطأ او اردت الرجوع للمجموعه \n\n•فهذا رابط المجموعه •\n•"..Flter_Markdown(redis:get(mero..'group:name'..msg.chat_id_)).." :\n\n["..redis:get(mero..'linkGroup'..msg.chat_id_).."]\n")
+send_msg(msg.sender_user_id_,"•╿اهلا عزيزي , لقد تم طردك من المجموعه بامر منك \n•|اذا كان هذا بالخطأ او اردت الرجوع للمجموعه \n\n•فهذا رابط المجموعه •\n•"..Flter_Markdown(redis:get(mero..'group:name'..msg.chat_id_)).." :\n\n["..redis:get(mero..'linkGroup'..msg.chat_id_).."]\n")
 sendMsg(msg.chat_id_,msg.id_,"•| لقد تم طردك بنجاح , ارسلت لك رابط المجموعه في الخاص اذا وصلت لك تستطيع الرجوع متى شئت ")
 else
 sendMsg(msg.chat_id_,msg.id_,"•| لا استطيع طردك لانك مشرف في المجموعه  ")
