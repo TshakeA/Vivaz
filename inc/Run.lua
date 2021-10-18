@@ -1197,16 +1197,7 @@ Carbon - ]]..SUDO_USER
 		local users = Text:match('/help@(.*)')
 		if tonumber(users) == tonumber(data.sender_user_id_) then
 		local Teext = [[
-• اهلا بك عزيزي 
-• الاوامر العامه
-   ━━━━━
-• م1 - اوامر الاداره 
-• م2 - اعدادات المجموعه 
-• م3 - اوامر الحمايه 
-• م4 - اوامر الخدمه 
-• م5 - اوامر التحشيش 
-• م6 - التفعيل و التعطيل 
-• م7 - الوضع للمجموعه 
+هلا فيك في اوامر البوت 
    ━━━━━
 Carbon - ]]..SUDO_USER
 		keyboard = {} 
