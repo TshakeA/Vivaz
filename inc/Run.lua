@@ -729,10 +729,10 @@ Carbon - ]]..SUDO_USER
 keyboard = {} 
   keyboard.inline_keyboard = {
   {
-  {text = '⓵', callback_data="/help1@"..data.sender_user_id_},{text = '⓶', callback_data="/help2@"..data.sender_user_id_},{text = 'اوامر الحمايه', callback_data="/help3@"..data.sender_user_id_},
+  {text = '⓵', callback_data="/help1@"..data.sender_user_id_},{text = '⓶', callback_data="/help2@"..data.sender_user_id_},{text = 'الحمايه', callback_data="/help3@"..data.sender_user_id_},
   },
   {
-  {text = '⓸', callback_data="/help4@"..data.sender_user_id_},{text = 'اوامر التحشيش', callback_data="/help5@"..data.sender_user_id_},
+  {text = '⓸', callback_data="/help4@"..data.sender_user_id_},{text = ' التحشيش', callback_data="/help5@"..data.sender_user_id_},
   },
   {
   {text = '⓺', callback_data="/help6@"..data.sender_user_id_},{text = 'اوامر الوضع', callback_data="/help7@"..data.sender_user_id_},
