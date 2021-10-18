@@ -643,7 +643,7 @@ keyboard.inline_keyboard = {
 {text = URL.escape(name3), url=id2},
 },
 {
-{text = '✿│اضغط لبدء اللعبه', callback_data='/startjoinerolet'},
+{text = '•│اضغط لبدء اللعبه', callback_data='/startjoinerolet'},
 },
 }
 return https.request(ApiToken..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(message)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -657,7 +657,7 @@ local xxffxx = 'عدد الاعبين : '..#list..' \nلقد انضم للرول
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '✿│اضغط للانضمام في اللعبه', callback_data='/joinerolet'},
+{text = '•│اضغط للانضمام في اللعبه', callback_data='/joinerolet'},
 },
 }
 return https.request(ApiToken..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(xxffxx)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -724,13 +724,6 @@ end
 • م5 - اوامر التحشيش 
 • م6 - التفعيل و التعطيل 
 • م7 - الوضع للمجموعه 
-• الحمايه - اعدادات الحمايه 
-• الوسائط - اعدادات الوسائط 
-• الاعدادات - اعدادات المجموعه 
-• الالعاب - العاب البوت 
-• السورس - سورس البوت 
-• المطور - مطور البوت 
-• م المطور - اوامر المطور 
    ━━━━━
 Carbon - ]]..SUDO_USER
 keyboard = {} 
@@ -1222,13 +1215,6 @@ Carbon - ]]..SUDO_USER
 • م5 - اوامر التحشيش 
 • م6 - التفعيل و التعطيل 
 • م7 - الوضع للمجموعه 
-• الحمايه - اعدادات الحمايه 
-• الوسائط - اعدادات الوسائط 
-• الاعدادات - اعدادات المجموعه 
-• الالعاب - العاب البوت 
-• السورس - سورس البوت 
-• المطور - مطور البوت 
-• م المطور - اوامر المطور 
    ━━━━━
 Carbon - ]]..SUDO_USER
 		keyboard = {} 
@@ -1325,11 +1311,11 @@ if msg.text then
 redis:setex(mero..'addcmd'..msg.chat_id_..msg.sender_user_id_,120,msg.text)
 redis:del(mero..'sendamr:'..msg.chat_id_..msg.sender_user_id_)
 end
-return sendMsg(msg.chat_id_,msg.id_,'✿╿اهلا بك عزيزي\n✿│الامر الي تريد تغيره الي  >'..msg.text..'< \n✿╽ارسله الان\n✓ ')
+return sendMsg(msg.chat_id_,msg.id_,'•|اهلا بك عزيزي\n•│الامر الي تريد تغيره الي  >'..msg.text..'< \n•|ارسله الان\n✓ ')
 end
 
-		  if (msg.text=="تحديث" or msg.text=="we" or msg.text=="تحديث ✿") and msg.sender_user_id_ == SUDO_ID then
-		  return sendMsg(msg.chat_id_,msg.id_," ✿┇تہ‏‏م تحديث المـلفات \n✓",nil,function(arg,data)
+		  if (msg.text=="تحديث" or msg.text=="we" or msg.text=="تحديث") and msg.sender_user_id_ == SUDO_ID then
+		  return sendMsg(msg.chat_id_,msg.id_," •|‏‏تم تحديث المـلفات \n✓",nil,function(arg,data)
 		  Refresh_Start = true
 		  end)
 		  end 
@@ -1349,16 +1335,16 @@ end
 		  redis:del('setusername'..msg.sender_user_id_)
 		  mmd = redis:get(mero..":SUDO_ID:")
 	  redis:hset(mero..'username:'..tonumber(mmd),'username',msg.text)
-		  send_msg(msg.chat_id_,"✿│عزيزي تم تغيير المطور الاساسي بنجاح الان ارسل reload ...🍂")
+		  send_msg(msg.chat_id_,"•│عزيزي تم تغيير المطور الاساسي بنجاح الان ارسل reload ...🍂")
 		  end
 		  if msg.text and msg.text:match('(%d+)(%d+)(%d+)(%d+)') and redis:get('setid'..msg.sender_user_id_) then
 		  redis:setex('setusername'..msg.sender_user_id_,120,true)
 		  redis:del('setid'..msg.sender_user_id_)
 		  redis:set(mero..":SUDO_ID:",msg.text)
-	  send_msg(msg.chat_id_,"✿│تم تثبيت الايدي الان قم برسال معرف المطور ✿ @UserName ...")
+	  send_msg(msg.chat_id_,"•│تم تثبيت الايدي الان قم برسال معرف المطور  @UserName ...")
 		  end
 		  if msg.text== 'تغير المطور الاساسي' and msg.sender_user_id_ == SUDO_ID then
-		  send_msg(msg.chat_id_,"✿│عزيزي قم برسال ايدي المطور ...🍂")
+		  send_msg(msg.chat_id_,"•│عزيزي قم برسال ايدي المطور ...🍂")
 	  redis:setex('setid'..msg.sender_user_id_,120,true)
 	  end
 		  
@@ -1372,7 +1358,7 @@ end
 
 
 		  if msg.text== 'reload' and msg.sender_user_id_ == SUDO_ID then
-		  sendMsg(msg.chat_id_,msg.id_,'✿| {* تــم أعـاده تشغيل البوت  *} ✿.\n\n✿| { Bot is Reloaded » }✿',nil,function(arg,data)
+		  sendMsg(msg.chat_id_,msg.id_,'•| {* تــم أعـاده تشغيل البوت  *} .\n\n✿| { Bot is Reloaded » }',nil,function(arg,data)
 		  dofile("./inc/Run.lua")
 		  print("Reload ~ ./inc/Run.lua")
 		  end)
@@ -1551,7 +1537,7 @@ end
 		  end
 		  end
 		  io.popen("rm -fr ../.telegram-cli/data/document/*")
-		  sendMsg(Uploaded_Groups_CH,Uploaded_Groups_MS,'✿*¦* تم رفع النسخة الاحتياطية\n✿*¦* حاليا عدد مـجمـوعاتك هي *'..redis:scard(mero..'group:ids')..'*✿\n✓')
+		  sendMsg(Uploaded_Groups_CH,Uploaded_Groups_MS,'•*|* تم رفع النسخة الاحتياطية\n•*|* حاليا عدد مـجمـوعاتك هي *'..redis:scard(mero..'group:ids')..'*•\n✓')
 		  end
 		  elseif data.ID == "UpdateUser" then  
 		  if data.user_.type_.ID == "UserTypeDeleted" then
